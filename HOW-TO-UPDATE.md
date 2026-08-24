@@ -78,6 +78,19 @@ Copy the button block right below that comment and edit the message and family n
 
 ---
 
+## Let people know you posted something
+
+The site itself can't send notifications — it's a static page, not an app with a database behind it. The fastest, most reliable way for families to actually see a new post is to drop one quick line in the class group chat (Remind) right after you commit the change. Remind pushes straight to everyone's phone, which beats email or a passive site check every time.
+
+A few ready-to-use lines, so it's fast:
+
+- 📅 New event just went up on the class hub: [Event name], [date]. bit.ly/room-parent#dates
+- 🎂 New birthday shoutout on the site — go check who's celebrating! bit.ly/room-parent#birthdays
+- 🍎 Someone left Ms. Fernandes a sweet note on the Appreciation Wall — go take a look: bit.ly/room-parent#appreciation
+- 📣 Quick update posted on the class hub: bit.ly/room-parent#updates
+
+Takes 10 extra seconds after you commit a change, and it's the same "Most Important" channel you're already asking families to join.
+
 ## A few tips
 
 - **Don't delete the comment lines** (the `<!-- ... -->` bits) — they're your landmarks for next time and don't show up on the live site.
