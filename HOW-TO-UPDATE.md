@@ -20,7 +20,9 @@ You're only ever editing plain text inside the templates below — you don't nee
 
 Search for: `HOW TO POST A NEW UPDATE`
 
-Copy this block, paste it where the comment says (newest on top), and edit the date and text:
+There are two template blocks there. Use the plain one for your own class updates. Use the **"From School/PTA"** one for anything you're forwarding along — like an email from the room parent coordinator (drama club sign-ups, spirit wear, etc.) — the little gold tag makes clear it's not something you wrote yourself. This is the place for exactly that kind of forwarded announcement, until there's a full parent email list.
+
+Copy whichever block fits, paste it where the comment says (newest on top), and edit the date and text:
 
 ```html
 <div class="update-item">
@@ -29,34 +31,24 @@ Copy this block, paste it where the comment says (newest on top), and edit the d
 </div>
 ```
 
+```html
+<div class="update-item">
+  <div class="update-date">SEP 5</div>
+  <div class="update-text"><span class="update-tag">From School/PTA</span><br>Drama Club sign-ups are open through September 12 — see the flyer in the group chat.</div>
+</div>
+```
+
 ## Post a School / PTA Event
 
 Search for: `HOW TO ADD A NEW EVENT`
 
-Copy this block and edit the 3-letter month, title, and date/time. Leave the icon exactly as-is — it's generic and works for any event:
+Copy this block and edit the 3-letter month, title, and date/time. Leave the icon exactly as-is — it's generic and works for any event. Paste it into the **"School & PTA Events"** card (not "Class Dates" or "F.A.S.T. Assessments") so it picks up the right gold styling automatically. The Dates section now has three cards side by side — Class Dates (field trips), F.A.S.T. Assessments (testing windows), and School & PTA Events — each with its own color so they're easy to tell apart at a glance. The assessment dates are set by the district each year; just edit the month/date text directly inside that card's `event-item` blocks when new ones are announced.
 
 ```html
 <div class="event-item">
   <div class="event-month">OCT</div>
   <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> Event Title Here</strong><span>October 10 · 6:00 PM</span></div>
 </div>
-```
-
-## Add a Birthday Shoutout
-
-Search for: `Add more birthdays as additional candles`
-
-Copy the button block right below that comment and edit the name and date:
-
-```html
-<button class="candle-note" data-name="Name" data-date="Month Day" aria-label="Name's birthday — Month Day">
-  <svg viewBox="0 0 20 56" aria-hidden="true">
-    <line x1="10" y1="14" x2="10" y2="18" stroke="#3a2a1a" stroke-width="1.5"/>
-    <path class="candle-flame" d="M10 4c3 5 3 9 0 13c-3-4-3-8 0-13Z" fill="#f6b53d" stroke="#c8841f" stroke-width="1.5" stroke-linejoin="round"/>
-    <rect class="candle-stick" x="6" y="18" width="8" height="34" rx="2.5" stroke="#6b4423" stroke-width="2"/>
-    <path d="M6 26 L14 26 M6 34 L14 34 M6 42 L14 42" stroke="#ffffff" stroke-width="1.3" opacity=".5"/>
-  </svg>
-</button>
 ```
 
 ## Add a Teacher Appreciation Note
@@ -76,6 +68,16 @@ Copy the button block right below that comment and edit the message and family n
 </button>
 ```
 
+## Update Ms. Fernandes' Birthday / Wedding note
+
+These live as two small cards at the top of the Teacher Appreciation section (search for `Ms. Fernandes' Birthday` to find them). They're plain text, not a repeating template — just edit the date or wording directly, or delete a whole `<div class="celebrate-card">...</div>` block once the occasion has passed.
+
+Each card also has a small goal line (search for `celebrate-goal`). To adjust a dollar amount, just edit the number inside the `<strong>` tag. To add your wedding-gift collection link once it's set up, search for `Collection link coming soon` and replace that whole `<span class="celebrate-goal-soon">...</span>` with a link in the same style as the birthday one right above it:
+
+```html
+<a class="btn btn-celebrate" href="YOUR-CHEDDARUP-LINK-HERE" target="_blank" rel="noopener">Chip In</a>
+```
+
 ---
 
 ## Let people know you posted something
@@ -85,7 +87,6 @@ The site itself can't send notifications — it's a static page, not an app with
 A few ready-to-use lines, so it's fast:
 
 - 📅 New event just went up on the class hub: [Event name], [date]. bit.ly/room-parent#dates
-- 🎂 New birthday shoutout on the site — go check who's celebrating! bit.ly/room-parent#birthdays
 - 🍎 Someone left Ms. Fernandes a sweet note on the Appreciation Wall — go take a look: bit.ly/room-parent#appreciation
 - 📣 Quick update posted on the class hub: bit.ly/room-parent#updates
 

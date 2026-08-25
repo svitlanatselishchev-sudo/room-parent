@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0f4d2e">
+<meta name="theme-color" content="#4f2f49">
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -24,28 +24,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green:#734F47;
-    --green-dark:#5c3e38;
-    --green-light:#fbf0ed;
-    --green-lighter:#fdf8f6;
-    --gold:#e8a13b;
-    --gold-dark:#c8841f;
-    --coral:#f0a58f;
-    --coral-light:#f7e3de;
-    --coral-dark:#c2593d;
-    --sky:#8fc4e0;
-    --sky-light:#e3edf7;
-    --sky-dark:#2f6f8f;
-    --lavender:#b98a9a;
-    --lavender-light:#f5ebee;
-    --lavender-dark:#7a4550;
-    --ink:#2a211d;
-    --muted:#5b6b62;
-    --line:#e6ded7;
+    --green:#73476C;
+    --green-dark:#492c43;
+    --green-light:#f7eef5;
+    --green-lighter:#fbf6fa;
+    --gold:#e38c25;
+    --gold-dark:#945d16;
+    --coral:#c471a5;
+    --coral-mid:#a55f8b;
+    --coral-light:#f7e9f2;
+    --coral-dark:#8a4d78;
+    --sky:#6f9a86;
+    --sky-light:#eaf2ee;
+    --sky-dark:#4f7563;
+    --lavender:#eab7d8;
+    --lavender-light:#fbeef5;
+    --lavender-dark:#a75084;
+    --ink:#2a1f27;
+    --muted:#6b5a64;
+    --line:#ecdfe6;
     --white:#ffffff;
     --radius:16px;
-    --shadow:0 4px 16px rgba(15,77,46,0.08);
-    --shadow-lg:0 12px 32px rgba(15,77,46,0.14);
+    --shadow:0 4px 16px rgba(79,47,73,0.08);
+    --shadow-lg:0 12px 32px rgba(79,47,73,0.14);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -57,15 +58,19 @@
   p{margin:0;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-  .section{padding:72px 0;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+  .section{padding:72px 0;position:relative;overflow:hidden;}
+  .section-deco{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+  .section-deco .d-circle{position:absolute;border-radius:50%;}
+  .section-deco .d-star{position:absolute;}
+  .d-flower{position:absolute;}
   #wishlist{padding-bottom:36px;}
   #about{padding-top:40px;}
   @media (max-width:700px){.section{padding:44px 0;}#wishlist{padding-bottom:20px;}#about{padding-top:24px;}}
   .section-alt{background:var(--green-lighter);}
   .eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);background:var(--green-light);padding:6px 14px;border-radius:999px;margin-bottom:14px;}
   .eyebrow-green{color:var(--green);background:var(--green-light);}
-  .eyebrow-gold{color:var(--gold-dark);background:#fdf1de;}
+  .eyebrow-gold{color:var(--gold-dark);background:#fbe8d3;}
   .eyebrow-coral{color:var(--coral-dark);background:var(--coral-light);}
   .eyebrow-sky{color:var(--sky-dark);background:var(--sky-light);}
   .eyebrow-lavender{color:var(--lavender-dark);background:var(--lavender-light);}
@@ -76,26 +81,37 @@
   .btn-sm{padding:9px 18px;font-size:13px;}
   .btn:hover{transform:translateY(-2px) scale(1.02);}
   .btn-primary{background:var(--gold);color:var(--green-dark);box-shadow:var(--shadow);}
-  .btn-primary:hover{background:var(--gold-dark);box-shadow:0 10px 26px rgba(232,161,59,.4);}
+  .btn-primary:hover{background:var(--gold-dark);box-shadow:0 10px 26px rgba(227,140,37,.4);}
   .btn-outline{background:transparent;color:var(--green);border-color:var(--green);}
   .btn-outline:hover{background:var(--green);color:var(--white);}
   .btn-green{background:var(--green);color:var(--white);}
   .btn-green:hover{background:var(--green-dark);}
 
+  /* PRIVACY / BOOKMARK BANNER */
+  .privacy-banner{background:var(--green-dark);color:rgba(255,255,255,.92);}
+  .privacy-banner .wrap{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:9px 24px;font-size:12.5px;font-weight:600;text-align:center;}
+  .privacy-banner svg{width:15px;height:15px;flex:none;color:var(--gold);}
+  .privacy-banner kbd{background:rgba(255,255,255,.16);border-radius:5px;padding:2px 6px;font-family:inherit;font-size:11.5px;font-weight:700;}
+
   /* NAV */
-  header{position:sticky;top:0;z-index:60;background:rgba(253,248,246,.92);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(92,64,51,.08);border-bottom:1px solid var(--line);}
+  header{position:sticky;top:0;z-index:60;background:rgba(253,248,246,.92);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(79,47,73,.08);border-bottom:1px solid var(--line);}
   section[id],[id]{scroll-margin-top:110px;}
   .section h2{position:relative;}
   .section h2::after{content:'';display:block;width:56px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--gold),var(--coral));margin-top:14px;}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1220px;margin:0 auto;}
   .brand{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:700;color:var(--green);font-size:17px;flex:none;}
-  .brand-logo{width:38px;height:38px;border-radius:50%;flex-shrink:0;box-shadow:0 2px 8px rgba(92,64,51,.2);}
+  .brand-logo{width:38px;height:38px;border-radius:50%;flex-shrink:0;box-shadow:0 2px 8px rgba(79,47,73,.2);}
   .brand-text{display:flex;flex-direction:column;line-height:1.22;}
   .brand-text em{font-style:normal;font-weight:400;font-size:12px;color:var(--muted);font-family:'Inter',sans-serif;}
   nav.links{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:nowrap;}
   nav.links a{font-weight:600;font-size:13px;text-decoration:none;color:var(--ink);white-space:nowrap;padding:8px 10px;border-radius:8px;transition:background .15s ease,color .15s ease;}
   nav.links a:hover{color:var(--green);background:var(--green-light);}
   .menu-btn{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:var(--green);flex:none;}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--coral-dark);color:var(--white);font-family:'Poppins',sans-serif;font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:999px;text-decoration:none;flex:none;white-space:nowrap;box-shadow:0 4px 12px rgba(138,77,120,.35);transition:transform .15s ease, filter .15s ease;}
+  .nav-cta:hover{filter:brightness(.9);transform:translateY(-1px);}
+  .nav-cta svg{width:14px;height:14px;}
+  @media (max-width:520px){.nav-cta span{display:none;}.nav-cta{padding:9px 11px;}}
   @media (max-width:1180px){
     nav.links{gap:0;}
     nav.links a{padding:8px 8px;font-size:12.5px;}
@@ -108,13 +124,13 @@
   }
 
   /* HERO */
-  .hero{background:linear-gradient(160deg,#fdf8f6 0%,#fbe9e2 60%,#f9e3da 100%);color:var(--ink);padding:38px 0 0;position:relative;overflow:hidden;}
+  .hero{background:linear-gradient(160deg,#fdfaf8 0%,#fbeaf3 55%,#f6def0 100%);color:var(--ink);padding:38px 0 0;position:relative;overflow:hidden;}
   .hero-deco{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
-  .deco-circle{position:absolute;border-radius:50%;background:rgba(115,79,71,.06);}
+  .deco-circle{position:absolute;border-radius:50%;background:rgba(115,71,108,.06);}
   .deco-circle.c1{width:70px;height:70px;left:6%;top:42%;}
-  .deco-circle.c2{width:28px;height:28px;left:11%;top:56%;background:rgba(240,165,143,.18);}
-  .deco-circle.c3{width:160px;height:160px;left:1%;bottom:-40px;background:rgba(232,161,59,.08);}
-  .deco-star{position:absolute;width:60px;height:60px;right:6%;bottom:14%;color:rgba(115,79,71,.14);}
+  .deco-circle.c2{width:28px;height:28px;left:11%;top:56%;background:rgba(196,113,165,.18);}
+  .deco-circle.c3{width:160px;height:160px;left:1%;bottom:-40px;background:rgba(227,140,37,.08);}
+  .deco-star{position:absolute;width:60px;height:60px;right:6%;bottom:14%;color:rgba(115,71,108,.14);}
   .hero .wrap{position:relative;z-index:1;}
   .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:32px;align-items:center;padding-bottom:36px;}
   .hero-grid>*{min-width:0;}
@@ -130,8 +146,8 @@
   .hero p{margin-top:12px;font-size:15px;max-width:580px;color:var(--ink);opacity:.85;}
   .hero .cta-row{margin-top:20px;display:flex;gap:14px;flex-wrap:wrap;}
   .hero-media{position:relative;display:flex;justify-content:center;align-items:center;width:100%;max-width:100%;margin:0 auto;min-height:190px;}
-  .hero-float-card{width:340px;text-align:center;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease;background:var(--white);border-radius:28px;padding:26px 22px 30px;box-shadow:0 14px 36px rgba(92,64,51,.14);border:1px solid var(--line);}
-  .hero-float-card:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(92,64,51,.2);}
+  .hero-float-card{width:340px;text-align:center;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease;background:var(--white);border-radius:28px;padding:26px 22px 30px;box-shadow:0 14px 36px rgba(79,47,73,.14);border:1px solid var(--line);}
+  .hero-float-card:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(79,47,73,.2);}
   .hero-float-card .ghost-qr{margin:2px auto 12px;}
   .ghost-pta-badge{display:inline-block;background:var(--gold);color:var(--green-dark);font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px;}
   .ghost-cta-title{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--green);line-height:1.3;margin-bottom:6px;}
@@ -162,9 +178,9 @@
   .tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0;}
   .tag{font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;}
   .tag:nth-child(4n+1){background:var(--green-light);color:var(--green-dark);}
-  .tag:nth-child(4n+2){background:#fdf1de;color:var(--gold-dark);}
-  .tag:nth-child(4n+3){background:#f7e3de;color:var(--coral-dark);}
-  .tag:nth-child(4n+4){background:#e3edf7;color:var(--sky-dark);}
+  .tag:nth-child(4n+2){background:#fbe8d3;color:var(--gold-dark);}
+  .tag:nth-child(4n+3){background:#f7e9f2;color:var(--coral-dark);}
+  .tag:nth-child(4n+4){background:#eaf2ee;color:var(--sky-dark);}
   .family-line{margin-top:16px;font-size:14.5px;color:var(--muted);background:var(--green-lighter);padding:12px 16px;border-radius:10px;border-left:3px solid var(--gold);}
 
   /* DUTIES */
@@ -179,7 +195,7 @@
   .duty-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease;display:flex;align-items:center;gap:12px;}
   .duty-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
   .duty-icon{width:36px;height:36px;flex:none;border-radius:10px;background:var(--green-light);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:17px;}
-  .duty-card:nth-child(6n+2) .duty-icon{background:#fdf1de;color:var(--gold-dark);}
+  .duty-card:nth-child(6n+2) .duty-icon{background:#fbe8d3;color:var(--gold-dark);}
   .duty-card:nth-child(6n+3) .duty-icon{background:var(--coral-light);color:var(--coral-dark);}
   .duty-card:nth-child(6n+4) .duty-icon{background:var(--sky-light);color:var(--sky-dark);}
   .duty-card:nth-child(6n+5) .duty-icon{background:var(--lavender-light);color:var(--lavender-dark);}
@@ -195,19 +211,35 @@
   /* CARDS (generic) */
   .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
   @media (max-width:760px){.card-grid{grid-template-columns:1fr;}}
-  .connect-grid{grid-template-columns:repeat(3,1fr);}
-  @media (max-width:820px){.connect-grid{grid-template-columns:repeat(2,1fr);}}
+  .connect-grid{grid-template-columns:repeat(2,1fr);margin-top:20px;}
   @media (max-width:560px){.connect-grid{grid-template-columns:1fr;}}
+
+  /* FEATURED GROUP-CHAT CTA */
+  .connect-featured{background:linear-gradient(135deg,var(--coral-dark),var(--coral-mid));color:var(--white);border-radius:22px;padding:30px 34px;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;box-shadow:0 14px 34px rgba(138,77,120,.28);position:relative;overflow:hidden;}
+  .connect-featured-icon{flex:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;}
+  .connect-featured-icon svg{width:32px;height:32px;color:var(--white);}
+  .connect-featured-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.22);color:var(--white);font-weight:800;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:5px 13px;border-radius:999px;margin-bottom:10px;position:relative;}
+  .connect-featured-badge::after{content:"";position:absolute;inset:-5px;border-radius:999px;border:2px solid rgba(255,255,255,.7);opacity:0;animation:priorityPulse 2.2s ease-out .4s 3;}
+  .connect-featured h3{font-size:22px;color:var(--white);margin-bottom:6px;}
+  .connect-featured p{color:rgba(255,255,255,.92);font-size:14.5px;margin-bottom:0;max-width:480px;}
+  .connect-featured .btn-primary{flex:none;background:var(--white);color:var(--coral-dark);box-shadow:0 8px 20px rgba(0,0,0,.18);}
+  .connect-featured .btn-primary:hover{background:var(--green-lighter);}
+  @media (max-width:760px){
+    .connect-featured{grid-template-columns:1fr;text-align:center;padding:28px 24px;}
+    .connect-featured-icon{margin:0 auto;}
+    .connect-featured p{max-width:100%;}
+    .connect-featured .btn-primary{width:100%;justify-content:center;margin-top:6px;}
+  }
   .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease;position:relative;overflow:hidden;}
   .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
   .card h3{font-size:18px;color:var(--green-dark);margin-bottom:10px;}
   .card p{color:var(--muted);font-size:15px;margin-bottom:18px;}
-  .badge-soon{display:inline-block;background:#fdf1de;color:var(--gold-dark);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;margin-bottom:10px;}
-  .badge-live{display:inline-block;background:#e6f4ec;color:var(--green);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;margin-bottom:10px;}
+  .badge-soon{display:inline-block;background:#fbe8d3;color:var(--gold-dark);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;margin-bottom:10px;}
+  .badge-live{display:inline-block;background:#f7eef5;color:var(--green);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;margin-bottom:10px;}
   .badge-coral{display:inline-block;background:var(--coral-light);color:var(--coral-dark);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;margin-bottom:10px;}
   .badge-sky{display:inline-block;background:var(--sky-light);color:var(--sky-dark);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;margin-bottom:10px;}
   .badge-lavender{display:inline-block;background:var(--lavender-light);color:var(--lavender-dark);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;margin-bottom:10px;}
-  .badge-gold{display:inline-block;background:#fdf1de;color:var(--gold-dark);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;margin-bottom:10px;}
+  .badge-gold{display:inline-block;background:#fbe8d3;color:var(--gold-dark);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:999px;margin-bottom:10px;}
 
   /* COLORED ACCENT BARS */
   .card-accent::before,.contact-card.card-accent::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;}
@@ -223,6 +255,7 @@
   .update-item{display:flex;gap:16px;align-items:flex-start;background:var(--green-lighter);border-radius:12px;padding:14px 18px;}
   .update-date{flex:none;width:66px;font-weight:800;font-size:12.5px;color:var(--sky-dark);background:var(--sky-light);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 4px;line-height:1.25;}
   .update-text{font-size:14.5px;color:var(--ink);line-height:1.55;padding-top:2px;}
+  .update-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-dark);background:#fbe8d3;padding:2px 8px;border-radius:999px;margin-bottom:5px;}
 
   /* BIRTHDAYS + APPRECIATION side-by-side layout */
   .dual-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;position:relative;z-index:2;}
@@ -232,10 +265,30 @@
     .dual-col-item:nth-child(2){border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:44px;}
   }
 
+  /* CELEBRATE MS. FERNANDES */
+  .celebrate-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:30px;}
+  @media (max-width:560px){.celebrate-grid{grid-template-columns:1fr;}}
+  .celebrate-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease;}
+  .celebrate-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+  .celebrate-card-goal{align-items:flex-start;}
+  .celebrate-body{min-width:0;}
+  .celebrate-goal{margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .celebrate-goal-label{font-size:12px;color:var(--muted);font-weight:600;line-height:1.4;}
+  .celebrate-goal-label strong{color:var(--ink);}
+  .celebrate-goal-label em{font-style:normal;font-weight:400;color:var(--muted);}
+  .btn-celebrate{display:inline-flex;align-items:center;background:var(--gold);color:var(--green-dark);padding:7px 17px;font-size:12.5px;font-weight:700;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background .15s ease, color .15s ease;}
+  .btn-celebrate:hover{background:var(--gold-dark);color:#fff;}
+  .celebrate-goal-soon{font-size:11.5px;font-weight:700;color:var(--muted);background:var(--green-lighter);border:1px dashed var(--line);padding:6px 13px;border-radius:999px;white-space:nowrap;}
+  .celebrate-icon{width:46px;height:46px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:21px;}
+  .celebrate-icon-gold{background:#fbe8d3;}
+  .celebrate-icon-lavender{background:var(--lavender-light);}
+  .celebrate-card h4{font-size:14.5px;color:var(--green-dark);margin-bottom:2px;}
+  .celebrate-card p{font-size:12.5px;color:var(--muted);margin:0;}
+
   /* TEACHER APPRECIATION WALL — apple tree */
-  .tree-scene{position:relative;max-width:400px;margin:0 auto 10px;}
+  .tree-scene{position:relative;max-width:360px;margin:0 auto 10px;}
   .tree-svg{display:block;width:100%;height:auto;}
-  .apple-pile{position:absolute;left:50%;top:12%;transform:translateX(-50%);width:56%;height:62%;display:flex;flex-wrap:wrap;align-items:center;align-content:center;justify-content:center;gap:6px 10px;}
+  .apple-pile{position:absolute;left:50%;top:7%;transform:translateX(-50%);width:60%;height:56%;display:flex;flex-wrap:wrap;align-items:center;align-content:center;justify-content:center;gap:6px 10px;}
   .apple-note{background:none;border:none;padding:0;cursor:pointer;width:15%;min-width:36px;max-width:50px;flex:none;transition:transform .15s ease;}
   .apple-note:nth-child(5n+1){transform:rotate(-6deg);}
   .apple-note:nth-child(5n+2){transform:rotate(4deg);}
@@ -249,7 +302,7 @@
   .apple-note:nth-child(4n+3) .apple-body{fill:#c2352a;}
   .apple-note:nth-child(4n+4) .apple-body{fill:#7ea24a;}
 
-  .apple-modal{position:fixed;inset:0;background:rgba(11,58,34,.55);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:999;}
+  .apple-modal{position:fixed;inset:0;background:rgba(79,47,73,.55);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:999;}
   .apple-modal.open{opacity:1;pointer-events:auto;}
   .apple-modal-card{background:var(--white);border-radius:18px;max-width:380px;width:100%;padding:32px 26px 28px;text-align:center;position:relative;transform:scale(.9) translateY(10px);transition:transform .2s ease;box-shadow:var(--shadow-lg);}
   .apple-modal.open .apple-modal-card{transform:scale(1) translateY(0);}
@@ -260,20 +313,20 @@
   .apple-modal-close:hover{color:var(--green-dark);}
 
   /* WISHLIST PRIORITY */
-  .wishlist-priority{background:linear-gradient(180deg,#fdf1de 0%,var(--white) 65%);position:relative;padding-top:56px;}
+  .wishlist-priority{background:linear-gradient(180deg,#fbe8d3 0%,var(--white) 65%);position:relative;padding-top:56px;}
   .priority-badge{display:inline-flex;align-items:center;gap:6px;position:relative;}
   .priority-badge::after{content:"";position:absolute;inset:-6px;border-radius:999px;border:2px solid var(--gold);opacity:0;animation:priorityPulse 2.2s ease-out .4s 2;}
   @keyframes priorityPulse{0%{opacity:.8;transform:scale(.92);}75%{opacity:0;transform:scale(1.35);}100%{opacity:0;transform:scale(1.35);}}
   .wishlist-card{border:1.5px solid var(--gold);box-shadow:var(--shadow-lg);position:relative;overflow:hidden;padding-top:26px;}
   .wishlist-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;}
   .wishlist-card.card-amazon::before{background:linear-gradient(90deg,#e8a13b,#c8841f);}
-  .wishlist-card.card-venmo::before{background:linear-gradient(90deg,#3d95ce,#2f6f8f);}
+  .wishlist-card.card-venmo::before{background:linear-gradient(90deg,var(--coral),var(--coral-dark));}
   .wishlist-card.card-adopt::before{background:linear-gradient(90deg,#c6aee0,#6b4a94);}
-  .wishlist-card .badge-live{background:#fdf1de;color:var(--gold-dark);}
+  .wishlist-card .badge-live{background:#fbe8d3;color:var(--gold-dark);}
   .wishlist-icon{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
   .wishlist-icon svg{width:22px;height:22px;}
-  .wishlist-icon-amazon{background:#fdf1de;color:var(--gold-dark);}
-  .wishlist-icon-venmo{background:#e5f1fa;color:#2f6f8f;}
+  .wishlist-icon-amazon{background:#fbe8d3;color:var(--gold-dark);}
+  .wishlist-icon-venmo{background:var(--coral-light);color:var(--coral-dark);}
   .wishlist-icon-adopt{background:#f3edf9;color:#6b4a94;}
   #wishlist .card-grid{grid-template-columns:repeat(3,1fr);}
   @media (max-width:900px){#wishlist .card-grid{grid-template-columns:repeat(2,1fr);}}
@@ -283,13 +336,30 @@
   .note-box{margin-top:28px;background:var(--green-lighter);border:1px solid var(--line);border-radius:var(--radius);padding:22px 26px;font-size:14.5px;color:var(--muted);}
 
   /* IMPORTANT DATES */
-  .dates-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:22px;align-items:start;}
-  @media (max-width:760px){.dates-grid{grid-template-columns:1fr;}}
-  .dates-card h3{font-size:17px;color:var(--green-dark);}
+  .dates-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;}
+  @media (max-width:980px){.dates-grid{grid-template-columns:1fr 1fr;}.dates-card-school{grid-column:1 / -1;}}
+  @media (max-width:640px){.dates-grid{grid-template-columns:1fr;}.dates-card-school{grid-column:auto;}}
+  .dates-card{border-top:5px solid var(--line);padding-top:23px;}
+  .dates-card h3{font-size:17px;color:var(--green-dark);display:flex;align-items:center;gap:8px;}
+  .dates-card-class{border-top-color:var(--sky-dark);background:var(--sky-light);}
+  .dates-card-class h3{color:var(--sky-dark);}
+  .dates-card-class .eyebrow-inline{background:var(--white);color:var(--sky-dark);}
+  .dates-card-class .event-item{background:var(--white);}
+  .dates-card-school{border-top-color:var(--gold-dark);background:#fbe8d3;}
+  .dates-card-school h3{color:var(--gold-dark);}
+  .dates-card-school .eyebrow-inline{background:var(--white);color:var(--gold-dark);}
+  .dates-card-school .event-item{background:var(--white);}
+  .dates-card-assessment{border-top-color:var(--lavender-dark);background:var(--lavender-light);}
+  .dates-card-assessment h3{color:var(--lavender-dark);}
+  .dates-card-assessment .eyebrow-inline{background:var(--white);color:var(--lavender-dark);}
+  .dates-card-assessment .event-item{background:var(--white);}
+  .dates-card-assessment .event-month{background:var(--lavender-dark);}
+  .eyebrow-inline{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:4px 11px;border-radius:999px;margin-bottom:2px;}
   .event-list{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
   .event-item{display:flex;align-items:center;gap:14px;background:var(--green-lighter);border-radius:12px;padding:10px 14px;}
-  .event-month{flex:none;width:52px;height:52px;border-radius:10px;background:var(--green);color:#fff;font-weight:800;font-size:12px;letter-spacing:.03em;display:flex;align-items:center;justify-content:center;}
-  .event-month.sep{background:var(--gold-dark);}
+  .event-month{flex:none;width:52px;height:52px;border-radius:10px;background:var(--muted);color:#fff;font-weight:800;font-size:12px;letter-spacing:.03em;display:flex;align-items:center;justify-content:center;}
+  .dates-card-class .event-month{background:var(--sky-dark);}
+  .dates-card-school .event-month{background:var(--gold-dark);}
   .event-info{display:flex;flex-direction:column;gap:2px;}
   .event-info strong{font-size:14.5px;color:var(--ink);}
   .event-info span{font-size:12.5px;color:var(--muted);}
@@ -297,18 +367,18 @@
   .note-box strong{color:var(--green-dark);}
 
   /* GHOST PTA */
-  .ghost-card{background:linear-gradient(135deg,var(--green-dark),var(--green));color:var(--white);border-radius:var(--radius);padding:22px 26px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:0 0 0 1px rgba(232,161,59,.35), var(--shadow-lg);margin-top:20px;}
+  .ghost-card{background:linear-gradient(135deg,var(--green-dark),var(--green));color:var(--white);border-radius:var(--radius);padding:22px 26px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:0 0 0 1px rgba(227,140,37,.35), var(--shadow-lg);margin-top:20px;}
   @media (max-width:700px){.ghost-card{grid-template-columns:1fr;text-align:center;}}
   .ghost-card h3{font-size:17px;margin-bottom:8px;}
   .ghost-card p{color:rgba(255,255,255,.88);font-size:14px;}
   .ghost-emoji{font-size:22px;margin-right:6px;}
   /* GHOST GATOR QR */
-  .ghost-qr{width:170px;display:block;margin:0 auto;filter:drop-shadow(0 10px 18px rgba(92,64,51,.3));}
-  .hero-float-card .ghost-qr{width:250px;filter:drop-shadow(0 8px 16px rgba(92,64,51,.22));}
+  .ghost-qr{width:170px;display:block;margin:0 auto;filter:drop-shadow(0 10px 18px rgba(79,47,73,.3));}
+  .hero-float-card .ghost-qr{width:250px;filter:drop-shadow(0 8px 16px rgba(79,47,73,.22));}
 
   /* VENMO */
-  .venmo-btn{background:#008CFF;color:#fff;}
-  .venmo-btn:hover{background:#0072cc;}
+  .venmo-btn{background:var(--coral-dark);color:#fff;}
+  .venmo-btn:hover{filter:brightness(.9);}
 
   /* FORMS */
   form{display:flex;flex-direction:column;gap:14px;max-width:560px;}
@@ -356,13 +426,13 @@
   .contact-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
   .contact-icon svg{width:19px;height:19px;}
   .contact-icon-green{background:var(--green-light);color:var(--green);}
-  .contact-icon-gold{background:#fdf1de;color:var(--gold-dark);}
+  .contact-icon-gold{background:#fbe8d3;color:var(--gold-dark);}
   .contact-icon-sky{background:var(--sky-light);color:var(--sky-dark);}
   .contact-icon-lavender{background:var(--lavender-light);color:var(--lavender-dark);}
 
   /* FOOTER */
   footer{background:var(--green-dark);color:rgba(255,255,255,.85);padding:48px 0 28px;font-size:13.5px;}
-  footer .disclaimer{background:rgba(232,161,59,.1);border:1px solid rgba(232,161,59,.4);border-left:4px solid var(--gold);border-radius:12px;padding:20px 22px;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.85);margin-bottom:28px;}
+  footer .disclaimer{background:rgba(227,140,37,.1);border:1px solid rgba(227,140,37,.4);border-left:4px solid var(--gold);border-radius:12px;padding:20px 22px;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.85);margin-bottom:28px;}
   footer .disclaimer strong{color:var(--gold);letter-spacing:.03em;}
   footer .disclaimer strong{color:rgba(255,255,255,.92);}
   .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);}
@@ -388,12 +458,12 @@
   }
 
   /* GHOST GATOR FAB — follows down the page */
-  .ghost-fab{position:fixed;right:22px;bottom:22px;z-index:190;width:64px;text-decoration:none;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 8px 16px rgba(11,58,34,.35));opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease, transform .3s ease;}
+  .ghost-fab{position:fixed;right:22px;bottom:22px;z-index:190;width:96px;text-decoration:none;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 8px 16px rgba(79,47,73,.35));opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease, transform .3s ease;}
   .ghost-fab.show{opacity:1;transform:translateY(0);pointer-events:auto;animation:ghostFloat 3.4s ease-in-out infinite;}
   .ghost-fab img{width:100%;height:auto;display:block;}
   @keyframes ghostFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
   @media (max-width:480px){
-    .ghost-fab{right:14px;bottom:90px;width:52px;}
+    .ghost-fab{right:12px;bottom:88px;width:78px;}
   }
   @media (prefers-reduced-motion: reduce){
     .ghost-fab.show{animation:none !important;}
@@ -405,21 +475,31 @@
 <header>
   <div class="nav">
     <div class="brand"><img src="images/logo.png" alt="Logo" class="brand-logo"><span class="brand-text">Room<em>Parent Hub</em></span></div>
-    <button class="menu-btn" aria-label="Toggle menu" onclick="document.querySelector('nav.links').classList.toggle('open')"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-    <nav class="links">
-      <a href="#wishlist">Wishlist</a>
-      <a href="#about">About</a>
-      <a href="#appreciation">Appreciation</a>
-      <a href="#involved">Involved</a>
-      <a href="#connect">Connect</a>
-      <a href="#updates">Updates</a>
-      <a href="#dates">Dates</a>
-      <a href="#goodtoknow">Good to Know</a>
-      <a href="#suggestions">Ideas</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav-right">
+      <nav class="links">
+        <a href="#wishlist">Wishlist</a>
+        <a href="#about">About</a>
+        <a href="#appreciation">Appreciation</a>
+        <a href="#involved">Involved</a>
+        <a href="#connect">Connect</a>
+        <a href="#updates">Updates</a>
+        <a href="#dates">Dates</a>
+        <a href="#goodtoknow">Good to Know</a>
+        <a href="#suggestions">Ideas</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg><span>Join Chat</span></a>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="document.querySelector('nav.links').classList.toggle('open')"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
   </div>
 </header>
+
+<div class="privacy-banner">
+  <div class="wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+    <span>Bookmark this page <kbd>Ctrl</kbd>+<kbd>D</kbd> (<kbd>⌘</kbd>+<kbd>D</kbd> on Mac) — it's private and won't turn up in Google, so save the link to find your way back!</span>
+  </div>
+</div>
 
 <section class="hero">
   <div class="hero-deco">
@@ -427,6 +507,8 @@
     <span class="deco-circle c2"></span>
     <span class="deco-circle c3"></span>
     <svg class="deco-star" viewBox="0 0 51 48" fill="none"><path d="M25.5 0 31 17.5 48 17.5 34 28.5 39.5 46 25.5 35.5 11.5 46 17 28.5 3 17.5 20 17.5Z" fill="currentColor"/></svg>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:64px;height:64px;left:4%;top:12%;color:rgba(196,113,165,.16);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:36px;height:36px;right:16%;top:20%;color:rgba(227,140,37,.18);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
   </div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
@@ -451,8 +533,8 @@
         <span class="ghost-pta-badge">PTA Membership</span>
         <img class="ghost-qr" src="images/ghost-gator.png" alt="A ghost-costumed mascot with a scannable QR code on its belly, linking to the Ghost PTA membership">
         <div class="ghost-cta-text">
-          <h3 class="ghost-cta-title">The Zero-Fuss "Ghost" Membership</h3>
-          <p class="ghost-cta-tagline">All the school spirit. Zero meetings.</p>
+          <h3 class="ghost-cta-title">You Can Ghost Us — It's Okay!</h3>
+          <p class="ghost-cta-tagline">No time commitment. Just a little school spirit.</p>
           <p class="ghost-cta-action">Scan the gator to join today!</p>
         </div>
       </a>
@@ -462,6 +544,11 @@
 </section>
 
 <section class="section wishlist-priority" id="wishlist">
+  <div class="section-deco">
+    <span class="d-circle" style="width:100px;height:100px;right:-25px;top:15%;background:rgba(227,140,37,.12);"></span>
+    <span class="d-circle" style="width:26px;height:26px;left:6%;bottom:14%;background:rgba(196,113,165,.15);"></span>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:46px;height:46px;left:20%;top:8%;color:rgba(227,140,37,.14);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+  </div>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow eyebrow-gold priority-badge"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l2.9 6.3 6.9.9-5 4.7 1.3 6.8L12 17.6l-6.1 3.1 1.3-6.8-5-4.7 6.9-.9L12 2z"/></svg> Most Needed Right Now</span>
@@ -499,6 +586,12 @@
 </section>
 
 <section class="section" id="about">
+  <div class="section-deco">
+    <span class="d-circle" style="width:130px;height:130px;right:-40px;top:10%;background:rgba(196,113,165,.14);"></span>
+    <span class="d-circle" style="width:44px;height:44px;right:14%;top:65%;background:rgba(227,140,37,.16);"></span>
+    <span class="d-circle" style="width:22px;height:22px;left:5%;top:20%;background:rgba(115,71,108,.1);"></span>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:52px;height:52px;left:8%;bottom:10%;color:rgba(196,113,165,.13);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+  </div>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow eyebrow-coral">About Me</span>
@@ -527,6 +620,11 @@
 </section>
 
 <section class="section section-compact section-alt" id="duties">
+  <div class="section-deco">
+    <span class="d-circle" style="width:100px;height:100px;left:-30px;top:8%;background:rgba(227,140,37,.14);"></span>
+    <span class="d-circle" style="width:150px;height:150px;right:-50px;bottom:-30px;background:rgba(111,154,134,.14);"></span>
+    <span class="d-circle" style="width:26px;height:26px;right:20%;top:15%;background:rgba(115,71,108,.12);"></span>
+  </div>
   <div class="wrap">
     <div class="dual-col">
       <div class="dual-col-item">
@@ -560,8 +658,8 @@
         <!-- Ghost PTA -->
         <div class="ghost-card">
           <div>
-            <h3><span class="ghost-emoji"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 10h.01M14.5 10h.01"/><path d="M4 21V11a8 8 0 0 1 16 0v10l-2.5-2-2 2-2-2-2 2-2-2-2.5-2z"/></svg></span>Don't have time to volunteer? Become a Ghost PTA member</h3>
-            <p>Here in spirit (literally). A Ghost PTA membership is a simple way to support school and PTA financially without any time commitment. You'll spot our ghost and QR code up top — or just tap below to join.</p>
+            <h3><span class="ghost-emoji"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 10h.01M14.5 10h.01"/><path d="M4 21V11a8 8 0 0 1 16 0v10l-2.5-2-2 2-2-2-2 2-2-2-2.5-2z"/></svg></span>Don't have time to volunteer? You can Ghost us — it's okay!</h3>
+            <p>No time commitment, no meetings, no guilt. A quick financial contribution is a simple way to support the school and PTA. You'll spot our ghost and QR code up top — or just tap below to join.</p>
             <div style="margin-top:18px;">
               <a class="btn btn-primary" href="https://www.givebacks.com/causes/75380941-3e2b-4e07-b0a0-abf0188ef578/shop/items/1037547" target="_blank" rel="noopener">Become a Ghost Member</a>
             </div>
@@ -573,19 +671,27 @@
 </section>
 
 <section class="section" id="connect">
+  <div class="section-deco">
+    <span class="d-circle" style="width:120px;height:120px;right:-35px;top:0;background:rgba(234,183,216,.13);"></span>
+    <span class="d-circle" style="width:34px;height:34px;left:8%;bottom:12%;background:rgba(196,113,165,.15);"></span>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:40px;height:40px;left:14%;top:10%;color:rgba(111,154,134,.16);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+  </div>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow eyebrow-lavender">Stay Connected</span>
       <h2>Stay Connected</h2>
       <p class="subhead">Real-time updates and a place to chat with other class families</p>
     </div>
-    <div class="card-grid connect-grid">
-      <div class="card card-accent card-accent-coral">
-        <span class="badge-coral">Most Important</span>
+    <div class="connect-featured">
+      <div class="connect-featured-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg></div>
+      <div>
+        <span class="connect-featured-badge"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:12px;height:12px;"><path d="M12 2l2.9 6.3 6.9.9-5 4.7 1.3 6.8L12 17.6l-6.1 3.1 1.3-6.8-5-4.7 6.9-.9L12 2z"/></svg> Most Important</span>
         <h3>Join Our Class Group Chat</h3>
         <p>This is the fastest way to reach me and stay in the loop — quick questions, reminders, and photos, all in one thread on Remind. Please join so you don't miss anything!</p>
-        <a class="btn btn-green" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener">Join the Group Chat</a>
       </div>
+      <a class="btn btn-primary" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener">Join the Group Chat</a>
+    </div>
+    <div class="card-grid connect-grid">
       <div class="card card-accent card-accent-sky">
         <span class="badge-sky">Updates</span>
         <h3>Room Parent Updates</h3>
@@ -603,24 +709,41 @@
 </section>
 
 <section class="section" id="updates">
+  <div class="section-deco">
+    <span class="d-circle" style="width:90px;height:90px;left:-25px;bottom:10%;background:rgba(111,154,134,.14);"></span>
+    <span class="d-circle" style="width:24px;height:24px;right:10%;top:12%;background:rgba(227,140,37,.14);"></span>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:38px;height:38px;right:20%;bottom:14%;color:rgba(196,113,165,.15);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+  </div>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow eyebrow-sky">Latest Updates</span>
       <h2>Room Parent Updates</h2>
-      <p class="subhead">Quick announcements and reminders, posted here as things come up.</p>
+      <p class="subhead">Quick announcements and reminders, posted here as things come up — including anything forwarded from the school or PTA (drama club sign-ups, spirit wear, etc.) until we have a full parent email list.</p>
     </div>
     <div class="card">
       <div class="update-list" id="updateList">
         <!-- ============================================
              HOW TO POST A NEW UPDATE:
-             Copy the block below (between COPY START / COPY END),
+             Copy one of the two blocks below (between COPY START / COPY END),
              paste it right here above this comment, then edit the
              date and text. Newest update should go on top.
+
+             Use the plain version for your own class updates.
+             Use the "From School/PTA" version for anything you're
+             forwarding along (like an email from the room parent
+             coordinator) — the little gold tag makes clear it's not
+             something you wrote yourself.
         ============================================ -->
-        <!-- COPY START
+        <!-- COPY START (your own update)
         <div class="update-item">
           <div class="update-date">SEP 5</div>
           <div class="update-text">Picture day moved to September 12 — details in the group chat.</div>
+        </div>
+        COPY END -->
+        <!-- COPY START (forwarded from school/PTA)
+        <div class="update-item">
+          <div class="update-date">SEP 5</div>
+          <div class="update-text"><span class="update-tag">From School/PTA</span><br>Drama Club sign-ups are open through September 12 — see the flyer in the group chat.</div>
         </div>
         COPY END -->
       </div>
@@ -630,6 +753,11 @@
 </section>
 
 <section class="section section-alt" id="dates">
+  <div class="section-deco">
+    <span class="d-circle" style="width:140px;height:140px;right:-45px;top:-20px;background:rgba(227,140,37,.13);"></span>
+    <span class="d-circle" style="width:70px;height:70px;left:-20px;bottom:5%;background:rgba(111,154,134,.15);"></span>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:34px;height:34px;right:12%;bottom:8%;color:rgba(196,113,165,.14);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+  </div>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow eyebrow-gold">Important Dates</span>
@@ -637,25 +765,10 @@
       <p class="subhead">Our class calendar, plus upcoming school & PTA events</p>
     </div>
     <div class="dates-grid">
-      <div class="card dates-card">
+      <div class="card dates-card dates-card-class">
+        <span class="eyebrow-inline">Our Classroom</span>
         <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg> Class Dates</h3>
         <div class="event-list">
-          <div class="event-item">
-            <div class="event-month">SEP</div>
-            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg> F.A.S.T. Reading Assessment</strong><span>September 1</span></div>
-          </div>
-          <div class="event-item">
-            <div class="event-month sep">SEP</div>
-            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg> F.A.S.T. Math Assessment</strong><span>September 3</span></div>
-          </div>
-          <div class="event-item">
-            <div class="event-month dec">DEC</div>
-            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg> F.A.S.T. Reading Assessment</strong><span>December 1</span></div>
-          </div>
-          <div class="event-item">
-            <div class="event-month dec">DEC</div>
-            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg> F.A.S.T. Math Assessment</strong><span>December 3</span></div>
-          </div>
           <div class="event-item">
             <div class="event-month">TBA</div>
             <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Environmental Studies Center Trip</strong><span>Date TBA — details before the trip</span></div>
@@ -667,7 +780,31 @@
         </div>
         <p class="dates-more">Chaperones must be Level 2 approved, must ride the bus, and siblings cannot attend — field trips are an educational experience for the class.</p>
       </div>
-      <div class="card dates-card">
+      <div class="card dates-card dates-card-assessment">
+        <span class="eyebrow-inline">Testing Windows</span>
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> F.A.S.T. Assessments</h3>
+        <div class="event-list">
+          <div class="event-item">
+            <div class="event-month">SEP</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg> F.A.S.T. Reading Assessment</strong><span>September 1</span></div>
+          </div>
+          <div class="event-item">
+            <div class="event-month">SEP</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg> F.A.S.T. Math Assessment</strong><span>September 3</span></div>
+          </div>
+          <div class="event-item">
+            <div class="event-month">DEC</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg> F.A.S.T. Reading Assessment</strong><span>December 1</span></div>
+          </div>
+          <div class="event-item">
+            <div class="event-month">DEC</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg> F.A.S.T. Math Assessment</strong><span>December 3</span></div>
+          </div>
+        </div>
+        <p class="dates-more">State-mandated progress monitoring — no prep needed, just a normal school day.</p>
+      </div>
+      <div class="card dates-card dates-card-school">
+        <span class="eyebrow-inline">School &amp; PTA</span>
         <h3><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l1.7 5.8L20 9.5l-6.3 1.7L12 17l-1.7-5.8L4 9.5l6.3-1.7L12 2z"/><path d="M19 14l.7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7L19 14z"/><path d="M5 15l.5 1.5L7 17l-1.5.5L5 19l-.5-1.5L3 17l1.5-.5L5 15z"/></svg> School & PTA Events</h3>
         <div class="event-list" id="eventList">
           <div class="event-item">
@@ -675,7 +812,7 @@
             <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Volunteer & Room Rep Meeting</strong><span>August 31 · 8:30 AM</span></div>
           </div>
           <div class="event-item">
-            <div class="event-month sep">SEP</div>
+            <div class="event-month">SEP</div>
             <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v6a3 3 0 0 0 3 3v11"/><path d="M6 2v6M9 2v6"/><path d="M18 2c-2 3-2 6 0 8v11"/></svg> Spaghetti Dinner</strong><span>September 16 · 5:00–7:00 PM</span></div>
           </div>
           <!-- ============================================
@@ -704,6 +841,11 @@
 </section>
 
 <section class="section" id="goodtoknow">
+  <div class="section-deco">
+    <span class="d-circle" style="width:110px;height:110px;right:-30px;bottom:0;background:rgba(115,71,108,.1);"></span>
+    <span class="d-circle" style="width:20px;height:20px;left:6%;top:10%;background:rgba(227,140,37,.15);"></span>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:42px;height:42px;left:16%;bottom:6%;color:rgba(111,154,134,.15);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+  </div>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow eyebrow-green">📋 Good to Know</span>
@@ -739,6 +881,11 @@
 </section>
 
 <section class="section section-alt" id="appreciation">
+  <div class="section-deco">
+    <span class="d-circle" style="width:130px;height:130px;left:-40px;top:5%;background:rgba(227,140,37,.13);"></span>
+    <span class="d-circle" style="width:60px;height:60px;right:-15px;bottom:8%;background:rgba(115,71,108,.1);"></span>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:58px;height:58px;right:8%;top:6%;color:rgba(234,183,216,.35);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+  </div>
   <div class="wrap">
     <div class="appreciation-layout">
       <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
@@ -746,31 +893,35 @@
         <h2>Teacher Appreciation Wall</h2>
         <p class="subhead" style="margin-left:auto;margin-right:auto;">A running thank-you to Ms. Fernandes — add a note anytime, all year long.</p>
       </div>
-      <div class="note-box" style="text-align:center;margin-bottom:20px;">🎂 Ms. Fernandes' birthday is <strong>October 28</strong>, and she's getting <strong>married in November</strong> — both perfect occasions for a note!</div>
+      <div class="celebrate-grid">
+        <div class="celebrate-card celebrate-card-goal">
+          <div class="celebrate-icon celebrate-icon-gold">🎂</div>
+          <div class="celebrate-body">
+            <h4>Ms. Fernandes' Birthday</h4>
+            <p>October 28 — a card or a small treat means a lot!</p>
+            <div class="celebrate-goal">
+              <span class="celebrate-goal-label">Suggested class goal: <strong>$100</strong> <em>(any amount welcome!)</em></span>
+              <a class="btn btn-celebrate" href="https://ms-fernandes-birthday-gift.cheddarup.com" target="_blank" rel="noopener">Chip In</a>
+            </div>
+          </div>
+        </div>
+        <div class="celebrate-card celebrate-card-goal">
+          <div class="celebrate-icon celebrate-icon-lavender">💍</div>
+          <div class="celebrate-body">
+            <h4>She's Getting Married!</h4>
+            <p>This November — congratulate her with a note below!</p>
+            <div class="celebrate-goal">
+              <span class="celebrate-goal-label">Suggested class goal: <strong>$150</strong> <em>(any amount welcome!)</em></span>
+              <span class="celebrate-goal-soon">Collection link coming soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="tap-hint-wrap"><span class="tap-hint">👆 Tap an apple to read the note</span></div>
       <div class="tree-scene">
-        <svg class="tree-svg" viewBox="0 0 400 290" aria-hidden="true">
-          <defs>
-            <radialGradient id="treeGrad" cx="38%" cy="30%" r="75%">
-              <stop offset="0" stop-color="#a8d17a"/>
-              <stop offset="1" stop-color="#7ea24a"/>
-            </radialGradient>
-          </defs>
-          <ellipse cx="200" cy="272" rx="120" ry="13" fill="#0b3a22" opacity=".08"/>
-          <path d="M182 178 C180 178 178 180 178 183 L173 268 C173 274 178 279 185 279 L215 279 C222 279 227 274 227 268 L222 183 C222 180 220 178 218 178 Z" fill="url(#trunkGrad)" stroke="#5c3a1e" stroke-width="5" stroke-linejoin="round"/>
-          <defs>
-            <linearGradient id="trunkGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#a9713f"/>
-              <stop offset="1" stop-color="#8a5a2b"/>
-            </linearGradient>
-          </defs>
-          <path d="M188 200 L184 240" stroke="#5c3a1e" stroke-width="2.5" stroke-linecap="round" opacity=".5"/>
-          <path d="M212 210 L215 250" stroke="#5c3a1e" stroke-width="2.5" stroke-linecap="round" opacity=".5"/>
-          <path d="M100 175 C60 165 52 115 88 95 C82 55 130 28 168 48 C185 15 245 15 262 50 C305 40 340 80 318 118 C348 138 340 185 300 192 C298 225 250 240 218 218 C195 240 150 238 132 212 C95 218 68 195 100 175 Z" fill="url(#treeGrad)" stroke="#4f6b34" stroke-width="6" stroke-linejoin="round"/>
-          <ellipse cx="150" cy="90" rx="34" ry="20" fill="#c3e0a0" opacity=".55"/>
-        </svg>
+        <img class="tree-svg" src="images/appreciation-tree.png" alt="An illustrated apple tree, ready for thank-you notes">
         <div class="apple-pile" id="appreciationWall">
-          <button class="apple-note" data-message="Thank you for helping Mia transition to a new class." data-name="Mia's Family" aria-label="Read thank-you note from Mia's Family">
+          <button class="apple-note" data-message="Thank you for helping Mia transition to a new school." data-name="Mia's Family" aria-label="Read thank-you note from Mia's Family">
             <svg viewBox="0 0 64 64" aria-hidden="true">
               <path class="apple-body" d="M32 20 C18 12 6 24 6 38 C6 52 17 60 32 60 C47 60 58 52 58 38 C58 24 46 12 32 20 Z" stroke="#6b4423" stroke-width="3"/>
               <ellipse cx="21" cy="32" rx="6" ry="9" fill="#fff" opacity=".45" transform="rotate(-25 21 32)"/>
@@ -819,6 +970,11 @@
 
 
 <section class="section" id="contact">
+  <div class="section-deco">
+    <span class="d-circle" style="width:120px;height:120px;right:-35px;top:-15px;background:rgba(234,183,216,.12);"></span>
+    <span class="d-circle" style="width:30px;height:30px;left:10%;bottom:10%;background:rgba(115,71,108,.1);"></span>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:44px;height:44px;left:18%;top:14%;color:rgba(227,140,37,.15);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+  </div>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow eyebrow-green">📬 Contact &amp; Ideas</span>
@@ -833,7 +989,7 @@
         <div class="role">Room Parent</div>
         <p><a href="mailto:svitlanatselishchev@gmail.com">svitlanatselishchev@gmail.com</a></p>
         <p><a href="sms:5618873141">561-887-3141 (text!)</a></p>
-        <p><a href="https://www.facebook.com/share/19LhPBm9yp/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 Friend me on Facebook</a></p>
+        <p><a href="https://www.facebook.com/share/1EpL1BPdmW/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 Friend me on Facebook</a></p>
       </div>
       <div class="contact-card card-accent card-accent-gold">
         <div class="contact-icon contact-icon-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
@@ -871,7 +1027,7 @@
     </div>
     <div class="footer-bottom">
       <div>Ms. Fernandes' 3rd Grade · Room Parent Hub<br>Made with <span class="heart"><svg class="icon icon-heart-sm" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21s-6.7-4.35-9.3-8.1C1 10.2 1.8 6.6 4.9 5.2c2.2-1 4.6-.2 5.9 1.5.4.5.8 1 1.2 1.6.4-.6.8-1.1 1.2-1.6 1.3-1.7 3.7-2.5 5.9-1.5 3.1 1.4 3.9 5 2.2 7.7C18.7 16.65 12 21 12 21z"/></svg></span> by your room parent, Lana Tselishchev · Questions? <a href="mailto:svitlanatselishchev@gmail.com">svitlanatselishchev@gmail.com</a></div>
-      <div>Last updated: August 24, 2026</div>
+      <div>Last updated: August 25, 2026</div>
     </div>
   </div>
 </footer>
@@ -889,7 +1045,7 @@
   <button type="button" class="chat-fab" id="chatFab" aria-label="Open class group chat invite" onclick="openChatBubble();"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg></button>
 </div>
 
-<a class="ghost-fab" id="ghostFab" href="https://www.givebacks.com/causes/75380941-3e2b-4e07-b0a0-abf0188ef578/shop/items/1037547" target="_blank" rel="noopener" aria-label="Become a Ghost PTA member — here in spirit">
+<a class="ghost-fab" id="ghostFab" href="https://www.givebacks.com/causes/75380941-3e2b-4e07-b0a0-abf0188ef578/shop/items/1037547" target="_blank" rel="noopener" aria-label="You can Ghost us — no time commitment PTA support">
   <img src="images/ghost-gator-fab.png" alt="" aria-hidden="true">
 </a>
 
