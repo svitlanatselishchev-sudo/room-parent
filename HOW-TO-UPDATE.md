@@ -72,7 +72,7 @@ Copy the button block right below that comment and edit the message and family n
 
 This lives as a featured card at the top of the Teacher Appreciation section (search for `Ms. Fernandes' Birthday` to find it). It's plain text, not a repeating template — just edit the date or wording directly, or delete the whole `celebrate-featured-wrap` block once the occasion has passed.
 
-The card also has a small goal line (search for `celebrate-goal`). To adjust the dollar amount, just edit the number inside the `<strong>` tag. To change the Chip In link, edit the `href` on the `<a class="btn btn-celebrate">` tag.
+The card also has a small goal line (search for `celebrate-goal`). To adjust the dollar amount, just edit the number inside the `<strong>` tag. To change the GiftCrowd collection link, edit the `href` on the `<a class="btn btn-celebrate">` tag — each occasion (birthday, event, supply drive, etc.) gets its own GiftCrowd collection link, and funds go straight to the teacher, never through your own account.
 
 ---
 
