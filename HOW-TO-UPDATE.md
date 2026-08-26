@@ -68,15 +68,22 @@ Copy the button block right below that comment and edit the message and family n
 </button>
 ```
 
-## Update Ms. Fernandes' Birthday / Wedding note
+## Update Ms. Fernandes' Birthday note
 
-These live as two small cards at the top of the Teacher Appreciation section (search for `Ms. Fernandes' Birthday` to find them). They're plain text, not a repeating template — just edit the date or wording directly, or delete a whole `<div class="celebrate-card">...</div>` block once the occasion has passed.
+This lives as a featured card at the top of the Teacher Appreciation section (search for `Ms. Fernandes' Birthday` to find it). It's plain text, not a repeating template — just edit the date or wording directly, or delete the whole `celebrate-featured-wrap` block once the occasion has passed.
 
-Each card also has a small goal line (search for `celebrate-goal`). To adjust a dollar amount, just edit the number inside the `<strong>` tag. To add your wedding-gift collection link once it's set up, search for `Collection link coming soon` and replace that whole `<span class="celebrate-goal-soon">...</span>` with a link in the same style as the birthday one right above it:
+The card also has a small goal line (search for `celebrate-goal`). To adjust the dollar amount, just edit the number inside the `<strong>` tag. To change the Chip In link, edit the `href` on the `<a class="btn btn-celebrate">` tag.
 
-```html
-<a class="btn btn-celebrate" href="YOUR-CHEDDARUP-LINK-HERE" target="_blank" rel="noopener">Chip In</a>
-```
+---
+
+## Seasonal look (automatic — nothing to do)
+
+The site's colors and little background decorations now shift on their own through the year, based on the visitor's own device date. You don't need to change anything for this to work — no toggle, no setting, nothing to remember.
+
+- **Colors:** the gold/coral/purple palette warms up for fall (Sep–Nov), cools down for winter (Dec–Feb), and eases back for spring (Mar–May) and summer (Jun–Aug). The main plum and text colors stay the same year-round so everything stays easy to read.
+- **Background icons:** a small, subtle icon appears in each section's background, changing by month — fall leaves in September, pumpkins & ghosts in October, turkeys in November, snowflakes in December, little trees in January, hearts in February, a shamrock in March, a tulip in April, a butterfly in May, a sun in June, fireworks in July, and a sunflower in August.
+
+If you ever want to change which icon shows in a given month, search for `monthIcons` near the bottom of `index.html` — it's a simple list mapping month numbers (1–12) to icon names. The available icon names are: `leaf`, `pumpkin`, `ghost`, `turkey`, `snowflake`, `tree`, `heart`, `shamrock`, `tulip`, `butterfly`, `sun`, `firework`, `sunflower`. This is the one part of the seasonal system that does need a code edit (not a simple copy-paste template), so come back and ask me if you'd like it adjusted.
 
 ---
 
