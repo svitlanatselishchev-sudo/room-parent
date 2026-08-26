@@ -323,6 +323,9 @@
   .update-date{flex:none;width:66px;font-weight:800;font-size:12.5px;color:var(--sky-dark);background:var(--sky-light);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 4px;line-height:1.25;}
   .update-text{font-size:14.5px;color:var(--ink);line-height:1.55;padding-top:2px;}
   .update-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-dark);background:#fbe8d3;padding:2px 8px;border-radius:999px;margin-bottom:5px;}
+  .update-tag-school{color:#3d6fa8;background:#e3edf9;}
+  .update-tag-pta{color:#8a4d9c;background:#f3e8f7;}
+  .update-tag-class{color:#3f8752;background:#e5f3e8;}
 
   /* BIRTHDAYS + APPRECIATION side-by-side layout */
   .dual-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;position:relative;z-index:2;}
@@ -587,7 +590,7 @@
         <a href="#suggestions">Ideas</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="nav-cta" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg><span>Join Chat</span></a>
+      <a class="nav-cta" data-link="RemindURL" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg><span>Join Chat</span></a>
       <button class="menu-btn" aria-label="Toggle menu" onclick="document.querySelector('nav.links').classList.toggle('open')"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     </div>
   </div>
@@ -633,7 +636,7 @@
       <p>First year at Bessey Creek (my daughter Mia is loving 3rd grade!), and I'm so excited to help our class have an amazing year. Here's everything you need — how to get involved, our classroom wishlist, and easy ways to reach me or Ms. Fernandes.</p>
       <div class="cta-row">
         <a href="#wishlist" class="btn btn-primary"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg> Classroom Wishlist</a>
-        <a href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener" class="btn btn-outline"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg> Join Group Chat</a>
+        <a data-link="RemindURL" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener" class="btn btn-outline"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg> Join Group Chat</a>
       </div>
     </div>
   </div>
@@ -659,7 +662,9 @@
         <div class="wishlist-icon wishlist-icon-amazon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></div>
         <h3>Amazon Class Wishlist</h3>
         <p>Browse supplies Ms. Fernandes' class could use and have items shipped straight to school.</p>
-        <a class="btn btn-green" href="https://www.amazon.com/hz/wishlist/ls/3QCXJKGUT4EYB?ref_=wl_share" target="_blank" rel="noopener">Shop the Wishlist</a>
+        <div class="wishlist-links" id="wishlistLinksList" style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+          <a class="btn btn-green" data-link="WishlistURL" href="https://www.amazon.com/hz/wishlist/ls/3QCXJKGUT4EYB?ref_=wl_share" target="_blank" rel="noopener">Shop the Wishlist</a>
+        </div>
         <div class="hand-note-block note-gold">
           <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14,32 C6,24 4,10 15,3"/><path d="M15,3 L9,9"/><path d="M15,3 L19,10"/></svg>
           <span>you make it all possible 💛</span>
@@ -670,7 +675,7 @@
         <div class="wishlist-icon wishlist-icon-giftcrowd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3>Classroom Collections</h3>
         <p>For specific needs like teacher birthdays, events, or supplies, I'll open a GiftCrowd collection — funds go straight to who they're for, never through my own account.</p>
-        <a class="btn giftcrowd-btn" href="https://app.giftcrowd.com/app/join-occasion/v6mmcWq7EmJuPWh7" target="_blank" rel="noopener">See the Current Collection</a>
+        <a class="btn giftcrowd-btn" data-link="GiftCrowdURL" href="https://app.giftcrowd.com/app/join-occasion/v6mmcWq7EmJuPWh7" target="_blank" rel="noopener">See the Current Collection</a>
         <div class="hand-note-block note-coral">
           <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14,32 C6,24 4,10 15,3"/><path d="M15,3 L9,9"/><path d="M15,3 L19,10"/></svg>
           <span>goes straight to them!</span>
@@ -686,7 +691,7 @@
     </div>
     <p class="wishlist-note">💛 We can't do it without you — thank you for being part of our classroom community!</p>
     <div class="note-box">
-      <strong>A note on transparency:</strong> As an accountant (and audit committee member!), I take tracking our class funds seriously. Every dollar donated goes toward classroom supplies, parties, or teacher appreciation — and I'm happy to share an itemized summary with any family who asks.
+      <strong>A note on transparency:</strong> As an accountant (and audit committee member!), I take tracking our class funds seriously. Every GiftCrowd collection is converted into an e-gift card, which Ms. Fernandes or I then use directly for class needs — nothing passes through my personal accounts. I keep digital receipts for everything and I'm happy to share an itemized summary with any family who asks.
     </div>
   </div>
 </section>
@@ -758,8 +763,10 @@
           <h2 style="font-size:24px;">There's a Role for Every Schedule</h2>
           <p class="subhead" style="margin-top:6px;">No commitment too small</p>
         </div>
-        <p style="font-size:14.5px;">Want to help with a party, run a station, send in supplies, or chaperone a field trip? I'll post volunteer slots as they come up. The easiest way for everyone to sign up (and see what's still needed) is a free sign-up sheet:</p>
-        <div class="note-box" style="margin-top:14px;padding:14px 18px;font-size:13.5px;"><strong>Volunteer sign-up sheet coming soon!</strong></div>
+        <p style="font-size:14.5px;">Want to help with a party, run a station, send in supplies, or chaperone a field trip? Fill out this quick form to let me know you're interested — I'll follow up as things come up, and if you're not cleared with the county yet, I'll send you what you need:</p>
+        <div style="margin-top:14px;">
+          <a class="btn btn-green btn-sm" data-link="VolunteerFormURL" href="https://forms.gle/XzJvgK2GE132zTG16" target="_blank" rel="noopener">Volunteer Interest Form</a>
+        </div>
         <p style="margin-top:16px;font-size:14.5px;">New to volunteering at Bessey Creek? Martin County requires an approved volunteer application before you can help in the classroom or on trips — start that here:</p>
         <div style="margin-top:12px;">
           <a class="btn btn-green btn-sm" href="https://www.martinschools.org/page/volunteer-services" target="_blank" rel="noopener">Start Volunteer Application</a>
@@ -804,9 +811,10 @@
         <span class="connect-featured-badge"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:12px;height:12px;"><path d="M12 2l2.9 6.3 6.9.9-5 4.7 1.3 6.8L12 17.6l-6.1 3.1 1.3-6.8-5-4.7 6.9-.9L12 2z"/></svg> Most Important</span>
         <h3>Join Our Class Group Chat</h3>
         <p>This is the fastest way to reach me and stay in the loop — quick questions, reminders, and photos, all in one thread on Remind. Please join so you don't miss anything!</p>
+        <p style="font-size:12.5px;margin-top:6px;">No app needed — join by text or email with one tap below, or get the free Remind app for the full experience.</p>
       </div>
       <div>
-        <a class="btn btn-primary" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener">Join the Group Chat</a>
+        <a class="btn btn-primary" data-link="RemindURL" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener">Join the Group Chat</a>
         <div class="hand-note-block note-cream">
           <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14,32 C6,24 4,10 15,3"/><path d="M15,3 L9,9"/><path d="M15,3 L19,10"/></svg>
           <span>seriously, join us!</span>
@@ -837,26 +845,39 @@
         </div>
         <!-- ============================================
              HOW TO POST A NEW UPDATE:
-             Copy one of the two blocks below (between COPY START / COPY END),
+             Copy one of the blocks below (between COPY START / COPY END),
              paste it right here above this comment, then edit the
              date and text. Newest update should go on top.
 
-             Use the plain version for your own class updates.
-             Use the "From School/PTA" version for anything you're
+             Use the plain version for your own class updates with no label.
+             Use the "Class" version to explicitly label something as a
+             class update. Use "School" or "PTA" for anything you're
              forwarding along (like an email from the room parent
-             coordinator) — the little gold tag makes clear it's not
-             something you wrote yourself.
+             coordinator) — the colored tag makes clear where it came from
+             at a glance: School = blue, PTA = purple, Class = green.
         ============================================ -->
-        <!-- COPY START (your own update)
+        <!-- COPY START (your own update, no label)
         <div class="update-item">
           <div class="update-date">SEP 5</div>
           <div class="update-text">Picture day moved to September 12 — details in the group chat.</div>
         </div>
         COPY END -->
-        <!-- COPY START (forwarded from school/PTA)
+        <!-- COPY START (labeled "Class")
         <div class="update-item">
           <div class="update-date">SEP 5</div>
-          <div class="update-text"><span class="update-tag">From School/PTA</span><br>Drama Club sign-ups are open through September 12 — see the flyer in the group chat.</div>
+          <div class="update-text"><span class="update-tag update-tag-class">🎒 Class</span><br>Picture day moved to September 12 — details in the group chat.</div>
+        </div>
+        COPY END -->
+        <!-- COPY START (forwarded from School)
+        <div class="update-item">
+          <div class="update-date">SEP 5</div>
+          <div class="update-text"><span class="update-tag update-tag-school">🏫 School</span><br>Drama Club sign-ups are open through September 12 — see the flyer in the group chat.</div>
+        </div>
+        COPY END -->
+        <!-- COPY START (forwarded from PTA)
+        <div class="update-item">
+          <div class="update-date">SEP 5</div>
+          <div class="update-text"><span class="update-tag update-tag-pta">🤝 PTA</span><br>Spirit wear orders are open through September 12 — see the flyer in the group chat.</div>
         </div>
         COPY END -->
       </div>
@@ -1012,20 +1033,6 @@
         <h2>Teacher Appreciation Wall</h2>
         <p class="subhead" style="margin-left:auto;margin-right:auto;">A running thank-you to Ms. Fernandes — add a note anytime, all year long.</p>
       </div>
-      <div class="celebrate-featured-wrap">
-        <div class="celebrate-card celebrate-card-goal celebrate-featured">
-          <div class="celebrate-icon celebrate-icon-gold">🎂</div>
-          <div class="celebrate-body">
-            <span class="celebrate-featured-badge">🎉 Coming Up</span>
-            <h4>Ms. Fernandes' Birthday</h4>
-            <p>October 28 — a card or a small treat means a lot! Collection closes October 24 so we can get it to her in time.</p>
-            <div class="celebrate-goal">
-              <span class="celebrate-goal-label">Suggested class goal: <strong>$100</strong> <em>(any amount welcome!)</em></span>
-              <a class="btn btn-celebrate" href="https://app.giftcrowd.com/app/join-occasion/v6mmcWq7EmJuPWh7" target="_blank" rel="noopener">Give a Gift →</a>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="appreciation-columns">
         <div class="tree-scene">
           <img class="tree-svg" src="images/appreciation-tree.png" alt="An illustrated apple tree, ready for thank-you notes" width="761" height="760">
@@ -1081,7 +1088,21 @@
         <h3><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21s-6.7-4.35-9.3-8.1C1 10.2 1.8 6.6 4.9 5.2c2.2-1 4.6-.2 5.9 1.5.4.5.8 1 1.2 1.6.4-.6.8-1.1 1.2-1.6 1.3-1.7 3.7-2.5 5.9-1.5 3.1 1.4 3.9 5 2.2 7.7C18.7 16.65 12 21 12 21z"/></svg> Leave a Thank-You Note</h3>
         <p>A quick note goes a long way. Share your name or stay anonymous — whatever you're comfortable with. Notes are reviewed before they're added to the wall.</p>
         <div style="margin-top:16px;">
-          <a class="btn btn-primary" href="https://leave-a-thank-you-note.cheddarup.com" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21s-6.7-4.35-9.3-8.1C1 10.2 1.8 6.6 4.9 5.2c2.2-1 4.6-.2 5.9 1.5.4.5.8 1 1.2 1.6.4-.6.8-1.1 1.2-1.6 1.3-1.7 3.7-2.5 5.9-1.5 3.1 1.4 3.9 5 2.2 7.7C18.7 16.65 12 21 12 21z"/></svg> Send Thank-You</a>
+          <a class="btn btn-primary" data-link="ThankYouFormURL" href="https://forms.gle/MQiKHoDZ3F6sB1166" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21s-6.7-4.35-9.3-8.1C1 10.2 1.8 6.6 4.9 5.2c2.2-1 4.6-.2 5.9 1.5.4.5.8 1 1.2 1.6.4-.6.8-1.1 1.2-1.6 1.3-1.7 3.7-2.5 5.9-1.5 3.1 1.4 3.9 5 2.2 7.7C18.7 16.65 12 21 12 21z"/></svg> Send Thank-You</a>
+        </div>
+      </div>
+      <div class="celebrate-featured-wrap" style="margin-top:36px;">
+        <div class="celebrate-card celebrate-card-goal celebrate-featured">
+          <div class="celebrate-icon celebrate-icon-gold">🎂</div>
+          <div class="celebrate-body">
+            <span class="celebrate-featured-badge">🎉 Coming Up</span>
+            <h4>Ms. Fernandes' Birthday</h4>
+            <p><span data-link="BirthdayText">October 28 — a card or a small treat means a lot! Collection closes 10/28 at 7:00 AM. She'll receive an e-gift card, or you can choose to have a physical card mailed instead.</span></p>
+            <div class="celebrate-goal">
+              <span class="celebrate-goal-label">Suggested class goal: <strong>$<span data-link="BirthdayGoal">100</span></strong> <em>(any amount welcome!)</em></span>
+              <a class="btn btn-celebrate" data-link="GiftCrowdURL" href="https://app.giftcrowd.com/app/join-occasion/v6mmcWq7EmJuPWh7" target="_blank" rel="noopener">Give a Gift →</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1137,7 +1158,7 @@
         <div class="role">Got An Idea?</div>
         <p>A party theme, event, or way to make this year great — I'd love to hear it.</p>
       </div>
-      <a class="btn btn-lavender" href="https://suggestion-and-ideas.cheddarup.com" target="_blank" rel="noopener">Share a Suggestion →</a>
+      <a class="btn btn-lavender" data-link="SuggestionFormURL" href="https://forms.gle/XLJdU9TYhsd2NCbH6" target="_blank" rel="noopener">Share a Suggestion →</a>
     </div>
   </div>
 </section>
@@ -1155,7 +1176,7 @@
 </footer>
 
 <div class="chat-widget">
-  <a class="chat-bubble" id="chatBubble" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener">
+  <a class="chat-bubble" id="chatBubble" data-link="RemindURL" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener">
     <button type="button" class="chat-bubble-close" aria-label="Close" onclick="event.preventDefault();event.stopPropagation();closeChatBubble();">×</button>
     <span class="chat-bubble-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg></span>
     <span class="chat-bubble-copy">
@@ -1238,6 +1259,128 @@
     });
     document.addEventListener('keydown', function(e){
       if(e.key === 'Escape') closeApple();
+    });
+  })();
+
+  (function(){
+    // LIVE CONTENT FROM GOOGLE SHEET — updates, PTA events, links, and wishlists
+    // sync from four tabs in "Room Parent Hub – Content" so they can be edited
+    // without touching this file. Each tab is fetched separately by name; if a
+    // given tab can't be reached (offline, not shared yet, tab doesn't exist,
+    // renamed, etc.) that one piece quietly leaves the page's existing content
+    // as-is — a problem with one tab never affects the others.
+    var SHEET_ID = '1YfOHVxvvDtOB9aTRlZYgyoJRh0chV6stVzZtObiHC3E';
+    function tabURL(name){
+      return 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&sheet=' + encodeURIComponent(name);
+    }
+
+    function parseCSV(text){
+      var rows = [], row = [], field = '', inQuotes = false;
+      for(var i=0;i<text.length;i++){
+        var c = text[i], next = text[i+1];
+        if(inQuotes){
+          if(c === '"' && next === '"'){ field += '"'; i++; }
+          else if(c === '"'){ inQuotes = false; }
+          else { field += c; }
+        } else {
+          if(c === '"'){ inQuotes = true; }
+          else if(c === ','){ row.push(field); field=''; }
+          else if(c === '\r'){ /* skip */ }
+          else if(c === '\n'){ row.push(field); rows.push(row); row=[]; field=''; }
+          else { field += c; }
+        }
+      }
+      if(field.length || row.length){ row.push(field); rows.push(row); }
+      return rows.filter(function(r){ return r.some(function(cell){ return (cell||'').trim(); }); });
+    }
+
+    function esc(s){
+      return (s == null ? '' : String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function fetchTab(name){
+      return fetch(tabURL(name), {cache:'no-store'}).then(function(r){
+        if(!r.ok) throw new Error('tab fetch failed: ' + name);
+        return r.text();
+      }).then(function(text){
+        var rows = parseCSV(text);
+        if(rows.length) rows.shift(); // header row
+        return rows;
+      }).catch(function(){ return null; }); // null = this tab is unavailable; caller leaves that section alone
+    }
+
+    fetchTab('Updates').then(function(rows){
+      if(!rows || !rows.length) return;
+      var updates = rows.map(function(r){
+        return {date:(r[0]||'').trim(), text:(r[1]||'').trim(), tag:(r[2]||'').trim()};
+      }).filter(function(u){ return u.date || u.text; });
+      if(!updates.length) return;
+      var uList = document.getElementById('updateList');
+      var uEmpty = document.getElementById('updateEmpty');
+      if(uList){
+        uList.innerHTML = updates.map(function(u){
+          var tagHTML = '';
+          if(u.tag){
+            var tagKey = u.tag.trim().toLowerCase();
+            if(tagKey === 'school'){ tagHTML = '<span class="update-tag update-tag-school">🏫 School</span><br>'; }
+            else if(tagKey === 'pta'){ tagHTML = '<span class="update-tag update-tag-pta">🤝 PTA</span><br>'; }
+            else if(tagKey === 'class'){ tagHTML = '<span class="update-tag update-tag-class">🎒 Class</span><br>'; }
+            else { tagHTML = '<span class="update-tag">From ' + esc(u.tag) + '</span><br>'; }
+          }
+          return '<div class="update-item"><div class="update-date">' + esc(u.date) + '</div><div class="update-text">' + tagHTML + esc(u.text) + '</div></div>';
+        }).join('');
+        if(uEmpty) uEmpty.style.display = uList.children.length ? 'none' : '';
+      }
+    });
+
+    fetchTab('Events').then(function(rows){
+      if(!rows || !rows.length) return;
+      var events = rows.map(function(r){
+        return {month:(r[0]||'').trim(), title:(r[1]||'').trim(), when:(r[2]||'').trim()};
+      }).filter(function(ev){ return ev.title; });
+      if(!events.length) return;
+      var eList = document.getElementById('eventList');
+      var eEmpty = document.getElementById('eventEmpty');
+      if(eList){
+        eList.innerHTML = events.map(function(ev){
+          return '<div class="event-item"><div class="event-month">' + esc(ev.month) + '</div><div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> ' + esc(ev.title) + '</strong><span>' + esc(ev.when) + '</span></div></div>';
+        }).join('');
+        if(eEmpty) eEmpty.style.display = eList.children.length ? 'none' : '';
+      }
+    });
+
+    fetchTab('Links').then(function(rows){
+      if(!rows || !rows.length) return;
+      var links = {};
+      rows.forEach(function(r){
+        var key = (r[0]||'').trim();
+        if(key) links[key] = (r[1]||'').trim();
+      });
+      ['GiftCrowdURL','RemindURL','VolunteerFormURL','ThankYouFormURL','SuggestionFormURL'].forEach(function(key){
+        if(links[key]){
+          document.querySelectorAll('[data-link="' + key + '"]').forEach(function(el){ el.href = links[key]; });
+        }
+      });
+      if(links.BirthdayText){
+        document.querySelectorAll('[data-link="BirthdayText"]').forEach(function(el){ el.textContent = links.BirthdayText; });
+      }
+      if(links.BirthdayGoal){
+        document.querySelectorAll('[data-link="BirthdayGoal"]').forEach(function(el){ el.textContent = links.BirthdayGoal; });
+      }
+    });
+
+    fetchTab('Wishlists').then(function(rows){
+      if(!rows || !rows.length) return;
+      var wishlists = rows.map(function(r){
+        return {label:(r[0]||'').trim(), url:(r[1]||'').trim()};
+      }).filter(function(w){ return w.label && w.url; });
+      if(!wishlists.length) return;
+      var wList = document.getElementById('wishlistLinksList');
+      if(wList){
+        wList.innerHTML = wishlists.map(function(w){
+          return '<a class="btn btn-green" href="' + esc(w.url) + '" target="_blank" rel="noopener">' + esc(w.label) + ' →</a>';
+        }).join('');
+      }
     });
   })();
 
