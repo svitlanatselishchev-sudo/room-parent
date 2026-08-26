@@ -398,13 +398,13 @@
   .wishlist-card{border:1.5px solid var(--gold);box-shadow:var(--shadow-lg);position:relative;overflow:hidden;padding-top:26px;}
   .wishlist-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;}
   .wishlist-card.card-amazon::before{background:linear-gradient(90deg,#e8a13b,#c8841f);}
-  .wishlist-card.card-venmo::before{background:linear-gradient(90deg,var(--coral),var(--coral-dark));}
+  .wishlist-card.card-giftcrowd::before{background:linear-gradient(90deg,var(--coral),var(--coral-dark));}
   .wishlist-card.card-adopt::before{background:linear-gradient(90deg,#c6aee0,#6b4a94);}
   .wishlist-card .badge-live{background:#fbe8d3;color:var(--gold-dark);}
   .wishlist-icon{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
   .wishlist-icon svg{width:22px;height:22px;}
   .wishlist-icon-amazon{background:#fbe8d3;color:var(--gold-dark);}
-  .wishlist-icon-venmo{background:var(--coral-light);color:var(--coral-dark);}
+  .wishlist-icon-giftcrowd{background:var(--coral-light);color:var(--coral-dark);}
   .wishlist-icon-adopt{background:#f3edf9;color:#6b4a94;}
   #wishlist .card-grid{grid-template-columns:repeat(3,1fr);}
   @media (max-width:900px){#wishlist .card-grid{grid-template-columns:repeat(2,1fr);}}
@@ -453,9 +453,9 @@
   /* GHOST GATOR QR */
   .ghost-qr{width:170px;height:auto;display:block;margin:0 auto;filter:drop-shadow(0 10px 18px rgba(79,47,73,.3));}
 
-  /* VENMO */
-  .venmo-btn{background:var(--coral-dark);color:#fff;}
-  .venmo-btn:hover{filter:brightness(.9);}
+  /* GIFTCROWD */
+  .giftcrowd-btn{background:var(--coral-dark);color:#fff;}
+  .giftcrowd-btn:hover{filter:brightness(.9);}
 
   /* FORMS */
   form{display:flex;flex-direction:column;gap:14px;max-width:560px;}
@@ -665,15 +665,15 @@
           <span>you make it all possible 💛</span>
         </div>
       </div>
-      <div class="card wishlist-card card-venmo">
+      <div class="card wishlist-card card-giftcrowd">
         <span class="badge-live">Live</span>
-        <div class="wishlist-icon wishlist-icon-venmo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3>General Classroom Donations</h3>
-        <p>Prefer to send a monetary donation for classroom needs? You can send it directly via Venmo.</p>
-        <a class="btn venmo-btn" href="https://venmo.com/u/svitlife" target="_blank" rel="noopener">Donate on Venmo</a>
+        <div class="wishlist-icon wishlist-icon-giftcrowd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Classroom Collections</h3>
+        <p>For specific needs like teacher birthdays, events, or supplies, I'll open a GiftCrowd collection — funds go straight to who they're for, never through my own account.</p>
+        <a class="btn giftcrowd-btn" href="https://app.giftcrowd.com/app/join-occasion/v6mmcWq7EmJuPWh7" target="_blank" rel="noopener">See the Current Collection</a>
         <div class="hand-note-block note-coral">
           <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14,32 C6,24 4,10 15,3"/><path d="M15,3 L9,9"/><path d="M15,3 L19,10"/></svg>
-          <span>the fastest way!</span>
+          <span>goes straight to them!</span>
         </div>
       </div>
       <div class="card wishlist-card card-adopt">
