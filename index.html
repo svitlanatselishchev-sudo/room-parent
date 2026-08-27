@@ -1003,7 +1003,7 @@
           </div>
         </div>
       </div>
-      <div class="celebrate-featured-wrap" style="margin-top:36px;">
+      <div class="celebrate-featured-wrap" id="birthdayFeature" style="margin-top:36px;display:none;">
         <div class="celebrate-card celebrate-card-goal celebrate-featured">
           <div class="celebrate-icon celebrate-icon-gold">🎂</div>
           <div class="celebrate-body">
@@ -1420,6 +1420,16 @@
       el.setAttribute('href', '#icon-' + icon);
       el.style.color = iconColors[icon] || 'rgba(115,71,108,.16)';
     });
+  })();
+
+  (function(){
+    // Ms. Fernandes' Birthday card — hidden by default in the HTML, revealed
+    // starting October 1st based on the visitor's local date. To change the
+    // reveal date, edit the "month >= 10" check below (10 = October).
+    var el = document.getElementById('birthdayFeature');
+    if(!el) return;
+    var month = new Date().getMonth() + 1; // 1-12
+    if(month >= 10){ el.style.display = ''; }
   })();
 </script>
 
