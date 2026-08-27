@@ -671,15 +671,18 @@
         </div>
       </div>
       <div class="card wishlist-card card-giftcrowd">
-        <span class="badge-live">Live</span>
+        <span class="badge-live" id="collectionsLiveBadge" style="display:none;">Live</span>
         <div class="wishlist-icon wishlist-icon-giftcrowd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3>Classroom Collections</h3>
         <p>For specific needs like teacher birthdays, events, or supplies, I'll open a GiftCrowd collection — funds go straight to who they're for, never through my own account.</p>
-        <a class="btn giftcrowd-btn" data-link="GiftCrowdURL" href="https://app.giftcrowd.com/app/join-occasion/v6mmcWq7EmJuPWh7" target="_blank" rel="noopener">See the Current Collection</a>
-        <div class="hand-note-block note-coral">
-          <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14,32 C6,24 4,10 15,3"/><path d="M15,3 L9,9"/><path d="M15,3 L19,10"/></svg>
-          <span>goes straight to them!</span>
+        <div id="collectionsLive" style="display:none;">
+          <a class="btn giftcrowd-btn" data-link="GiftCrowdURL" href="https://app.giftcrowd.com/app/join-occasion/v6mmcWq7EmJuPWh7" target="_blank" rel="noopener">See the Current Collection</a>
+          <div class="hand-note-block note-coral">
+            <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14,32 C6,24 4,10 15,3"/><path d="M15,3 L9,9"/><path d="M15,3 L19,10"/></svg>
+            <span>goes straight to them!</span>
+          </div>
         </div>
+        <p id="collectionsComingSoon" style="margin-top:4px;font-size:13.5px;color:var(--muted);font-style:italic;">Nothing open right now — check back soon!</p>
       </div>
       <div class="card wishlist-card card-adopt">
         <span class="badge-live">Live</span>
@@ -1423,13 +1426,25 @@
   })();
 
   (function(){
-    // Ms. Fernandes' Birthday card — hidden by default in the HTML, revealed
-    // starting October 1st based on the visitor's local date. To change the
-    // reveal date, edit the "month >= 10" check below (10 = October).
-    var el = document.getElementById('birthdayFeature');
-    if(!el) return;
+    // Ms. Fernandes' Birthday collection — hidden by default in the HTML
+    // (both the "Coming Up" card in Teacher Appreciation, and the live
+    // GiftCrowd button + badge on the Classroom Collections wishlist card),
+    // revealed starting October 1st based on the visitor's local date.
+    // To change the reveal date, edit the "month >= 10" check below (10 = October).
     var month = new Date().getMonth() + 1; // 1-12
-    if(month >= 10){ el.style.display = ''; }
+    var isLive = month >= 10;
+
+    var feature = document.getElementById('birthdayFeature');
+    if(feature && isLive){ feature.style.display = ''; }
+
+    var liveBadge = document.getElementById('collectionsLiveBadge');
+    var liveBlock = document.getElementById('collectionsLive');
+    var comingSoon = document.getElementById('collectionsComingSoon');
+    if(isLive){
+      if(liveBadge){ liveBadge.style.display = ''; }
+      if(liveBlock){ liveBlock.style.display = ''; }
+      if(comingSoon){ comingSoon.style.display = 'none'; }
+    }
   })();
 </script>
 
