@@ -441,6 +441,9 @@
   .eyebrow-inline{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:4px 11px;border-radius:999px;margin-bottom:2px;}
   .event-list{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
   .event-item{display:flex;align-items:center;gap:14px;background:var(--green-lighter);border-radius:12px;padding:10px 14px;}
+  .event-item-alert{background:var(--coral-light);border:1.5px solid var(--coral);}
+  .event-item-alert .event-month{background:var(--coral-dark);}
+  .event-item-alert .event-info strong{color:var(--coral-dark);}
   .event-month-heading{font-weight:800;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-bottom:5px;border-bottom:2px solid var(--line);margin-top:6px;}
   .event-month-heading:first-child{margin-top:0;}
   .event-month-heading-current{display:flex;align-items:center;gap:6px;color:var(--gold-dark);background:linear-gradient(90deg,#fff9ef 0%,#fdecd6 100%);border:1.5px solid var(--gold);border-radius:10px;padding:7px 12px;font-size:12.5px;margin-top:0;}
@@ -1367,7 +1370,14 @@
           var heading = '<div class="event-month-heading' + (isCurrent ? ' event-month-heading-current' : '') + '">' +
             (isCurrent ? '📅 This Month — ' + esc(g.month) : esc(g.month)) + '</div>';
           var items = g.items.map(function(ev){
-            return '<div class="event-item"><div class="event-month">' + esc(ev.month) + '</div><div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> ' + esc(ev.title) + '</strong><span>' + esc(ev.when) + '</span></div></div>';
+            // "No School" and "Early Release" get extra visual emphasis since
+            // they're schedule-disruption notices parents need to catch at a glance.
+            var titleLower = ev.title.toLowerCase();
+            var isAlert = titleLower.indexOf('no school') !== -1 || titleLower.indexOf('early release') !== -1;
+            var icon = isAlert
+              ? '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>'
+              : '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>';
+            return '<div class="event-item' + (isAlert ? ' event-item-alert' : '') + '"><div class="event-month">' + esc(ev.month) + '</div><div class="event-info"><strong>' + icon + ' ' + esc(ev.title) + '</strong><span>' + esc(ev.when) + '</span></div></div>';
           }).join('');
           return heading + items;
         }).join('');
