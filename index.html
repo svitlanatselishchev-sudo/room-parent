@@ -441,6 +441,9 @@
   .eyebrow-inline{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:4px 11px;border-radius:999px;margin-bottom:2px;}
   .event-list{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
   .event-item{display:flex;align-items:center;gap:14px;background:var(--green-lighter);border-radius:12px;padding:10px 14px;}
+  .event-month-heading{font-weight:800;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-bottom:5px;border-bottom:2px solid var(--line);margin-top:6px;}
+  .event-month-heading:first-child{margin-top:0;}
+  .event-month-heading-current{display:flex;align-items:center;gap:6px;color:var(--gold-dark);background:linear-gradient(90deg,#fff9ef 0%,#fdecd6 100%);border:1.5px solid var(--gold);border-radius:10px;padding:7px 12px;font-size:12.5px;margin-top:0;}
   .event-month{flex:none;width:52px;height:52px;border-radius:10px;background:var(--muted);color:#fff;font-weight:800;font-size:12px;letter-spacing:.03em;display:flex;align-items:center;justify-content:center;}
   .dates-card-class .event-month{background:var(--sky-dark);}
   .dates-card-school .event-month{background:var(--gold-dark);}
@@ -927,10 +930,11 @@
           COPY END -->
         </div>
         <div class="note-box" id="eventEmpty" style="margin-top:14px;">No school or PTA events posted yet — check back soon!</div>
-        <p class="dates-more">More school & PTA events are posted on the school's Events Calendar. The PDF is the district's full school-year calendar — holidays, early release days, and other key dates.</p>
+        <p class="dates-more">More school & PTA events are posted on the school's Events Calendar. The PDF is the district's full school-year calendar — holidays, early release days, and other key dates. The PTA Calendar has PTA-specific events and meetings, always up to date.</p>
         <div class="cta-row" style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;">
           <a class="btn btn-green" href="https://www.martinschools.org/o/bces/events" target="_blank" rel="noopener">Events Calendar</a>
           <a class="btn btn-outline" style="color:var(--green-dark);border-color:var(--green);" href="https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/2252/Mcsd/e376d653-4556-48cf-83b0-5085d06df2d9/School-Calendar-2026-2027-Board-Approved-10.21.25.pdf?disposition=inline" target="_blank" rel="noopener">Full Calendar (PDF)</a>
+          <a class="btn btn-outline" style="color:var(--coral-dark);border-color:var(--coral);" href="https://bceptafl.givebacks.com/w/Calendar" target="_blank" rel="noopener">PTA Calendar</a>
         </div>
       </div>
     </div>
@@ -1344,8 +1348,28 @@
       var eList = document.getElementById('eventList');
       var eEmpty = document.getElementById('eventEmpty');
       if(eList){
-        eList.innerHTML = events.map(function(ev){
-          return '<div class="event-item"><div class="event-month">' + esc(ev.month) + '</div><div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> ' + esc(ev.title) + '</strong><span>' + esc(ev.when) + '</span></div></div>';
+        // Group events by month (in the order they first appear in the sheet),
+        // then label whichever group matches the visitor's current month as
+        // "This Month" so it stands out — updates automatically all year.
+        var MONTH_ABBR = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+        var currentMonth = MONTH_ABBR[new Date().getMonth()];
+        var groups = [], groupMap = {};
+        events.forEach(function(ev){
+          var key = (ev.month || '').trim().toUpperCase() || '—';
+          if(!groupMap[key]){
+            groupMap[key] = {month:key, items:[]};
+            groups.push(groupMap[key]);
+          }
+          groupMap[key].items.push(ev);
+        });
+        eList.innerHTML = groups.map(function(g){
+          var isCurrent = g.month === currentMonth;
+          var heading = '<div class="event-month-heading' + (isCurrent ? ' event-month-heading-current' : '') + '">' +
+            (isCurrent ? '📅 This Month — ' + esc(g.month) : esc(g.month)) + '</div>';
+          var items = g.items.map(function(ev){
+            return '<div class="event-item"><div class="event-month">' + esc(ev.month) + '</div><div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> ' + esc(ev.title) + '</strong><span>' + esc(ev.when) + '</span></div></div>';
+          }).join('');
+          return heading + items;
         }).join('');
         if(eEmpty) eEmpty.style.display = eList.children.length ? 'none' : '';
       }
