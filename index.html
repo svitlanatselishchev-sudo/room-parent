@@ -232,8 +232,8 @@
   .wave-divider{display:block;width:100%;height:auto;position:relative;z-index:1;margin-top:-2px;}
 
   /* ABOUT */
-  .about-grid{display:grid;grid-template-columns:260px 1fr;gap:44px;align-items:start;}
-  @media (max-width:700px){.about-grid{grid-template-columns:1fr;}.family-photo{max-width:190px;margin:0 auto;}}
+  .about-grid{display:grid;grid-template-columns:190px 1fr;gap:36px;align-items:start;}
+  @media (max-width:700px){.about-grid{grid-template-columns:1fr;}.family-photo{max-width:128px;margin:0 auto 4px;}.family-caption-tag{font-size:15px;padding:4px 13px;bottom:-12px;}}
   .about-media{display:flex;flex-direction:column;align-items:center;gap:22px;}
   .avatar{width:180px;height:180px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;border:4px solid var(--white);box-shadow:var(--shadow-lg);margin:0 auto;overflow:hidden;}
   .avatar svg{width:86px;height:86px;color:var(--green);}
@@ -251,6 +251,14 @@
   .tag:nth-child(4n+3){background:#f7e9f2;color:var(--coral-dark);}
   .tag:nth-child(4n+4){background:#eaf2ee;color:var(--sky-dark);}
   .family-line{margin-top:16px;font-size:14.5px;color:var(--muted);background:var(--green-lighter);padding:12px 16px;border-radius:10px;border-left:3px solid var(--gold);}
+  .about-details{position:relative;overflow:hidden;max-height:82px;transition:max-height .35s ease;}
+  .about-details.expanded{max-height:1200px;}
+  .about-details::after{content:'';position:absolute;left:0;right:0;bottom:0;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,0),var(--white));pointer-events:none;opacity:1;transition:opacity .25s ease;}
+  .about-details.expanded::after{opacity:0;}
+  .about-toggle{display:flex;align-items:center;gap:6px;margin-top:10px;background:none;border:none;padding:0;font-family:inherit;font-size:14px;font-weight:700;color:var(--coral-dark);cursor:pointer;}
+  .about-toggle:hover{text-decoration:underline;}
+  .about-toggle svg{width:16px;height:16px;transition:transform .25s ease;}
+  .about-toggle.expanded svg{transform:rotate(180deg);}
 
   /* DUTIES */
   .section-compact{padding:44px 0;}
@@ -731,15 +739,21 @@
       <div>
         <h3 class="about-name">Svitlana "Lana" Tselishchev</h3>
         <div class="about-role">Room Parent · Ms. Fernandes' 3rd Grade</div>
-        <p>Hi everyone! I'm Lana, and I'm so excited to be your room parent this year. I'm a former 2nd grade teacher from Ukraine who became an accountant after relocating to the U.S. eleven years ago. Now I get to bring both worlds together right here at school: I put my accounting background to work in our PTA, and my teaching background to work as your room mom — it's my way of serving our community with the skills and passions I have. My fiancé William and I are proudly raising a blended family of three: Mia (3rd grade, Ms. Fernandes' class), Aria (Kindergarten, Ms. Rutland), and William Jr. (VPK, Ms. Rivera). This is our first year at Bessey Creek, and I'm here to help however I can — organizing parties, coordinating volunteers, and keeping everyone in the loop. Reach out anytime!</p>
-        <div class="tags">
-          <span class="tag">Accountant</span>
-          <span class="tag">Former Teacher</span>
-          <span class="tag">PTA Member</span>
-          <span class="tag">Audit Committee</span>
-          <span class="tag">Family of 5</span>
+        <div class="about-details" id="aboutDetails">
+          <p>Hi everyone! I'm Lana, and I'm so excited to be your room parent this year. I'm a former 2nd grade teacher from Ukraine who became an accountant after relocating to the U.S. eleven years ago. Now I get to bring both worlds together right here at school: my accounting background helps our PTA, and my teaching background helps me show up for you as your room mom — it's my way of serving our community with the skills and passions I have. My fiancé William and I are proudly raising a blended family of three: Mia (3rd grade, Ms. Fernandes' class), Aria (Kindergarten, Ms. Rutland), and William Jr. (VPK, Ms. Rivera). This is our first year at Bessey Creek, and I'm here to support however I can — organizing parties, coordinating volunteers, and keeping everyone in the loop. Reach out anytime!</p>
+          <div class="tags">
+            <span class="tag">Accountant</span>
+            <span class="tag">Former Teacher</span>
+            <span class="tag">PTA Member</span>
+            <span class="tag">Audit Committee</span>
+            <span class="tag">Family of 5</span>
+          </div>
+          <div class="family-line">Our Gator crew: Mia (3rd, Ms. Fernandes) · Aria (Kindergarten, Ms. Rutland) · William Jr. (VPK, Ms. Rivera)</div>
         </div>
-        <div class="family-line">Our Gator crew: Mia (3rd, Ms. Fernandes) · Aria (Kindergarten, Ms. Rutland) · William Jr. (VPK, Ms. Rivera)</div>
+        <button class="about-toggle" id="aboutToggleBtn" aria-expanded="false" aria-controls="aboutDetails" onclick="(function(){var d=document.getElementById('aboutDetails'),b=document.getElementById('aboutToggleBtn'),open=d.classList.toggle('expanded');b.classList.toggle('expanded',open);b.setAttribute('aria-expanded',open?'true':'false');b.querySelector('.about-toggle-label').textContent=open?'Show less':'Read more about me';})()">
+          <span class="about-toggle-label">Read more about me</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
       </div>
     </div>
   </div>
