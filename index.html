@@ -351,7 +351,8 @@
   .update-list:not(:empty){margin-bottom:18px;}
   .update-item{display:flex;gap:16px;align-items:flex-start;background:var(--green-lighter);border-radius:12px;padding:14px 18px;}
   .update-date{flex:none;width:66px;font-weight:800;font-size:12.5px;color:var(--sky-dark);background:var(--sky-light);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 4px;line-height:1.25;}
-  .update-text{font-size:14.5px;color:var(--ink);line-height:1.55;padding-top:2px;}
+  .update-text{font-size:14.5px;color:var(--ink);line-height:1.55;padding-top:2px;min-width:0;overflow-wrap:anywhere;}
+  .update-text a{color:var(--coral-dark);font-weight:600;text-decoration:underline;}
   .update-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-dark);background:#fbe8d3;padding:2px 8px;border-radius:999px;margin-bottom:5px;}
   .update-tag-school{color:#3d6fa8;background:#e3edf9;}
   .update-tag-pta{color:#8a4d9c;background:#f3e8f7;}
@@ -829,6 +830,14 @@
     <div class="card">
       <div class="update-list" id="updateList">
         <div class="update-item">
+          <div class="update-date">SEP 23</div>
+          <div class="update-text"><span class="update-tag update-tag-pta">🤝 PTA</span><br>🔨✨ The Silent Auction is ON, and the bidding is getting good!<br>Treasure hunters, this one's for you! 🎁 Scoop up amazing goodies while supporting our Bessey Creek school. 💜<br>⏰ Bidding closes Monday, Sept 28 at 6:00 PM, so don't let your favorite item get away! 👀<br>🙌 Start bidding: <a href="https://app.givebacks.gives/auction5" target="_blank" rel="noopener">https://app.givebacks.gives/auction5</a></div>
+        </div>
+        <div class="update-item">
+          <div class="update-date">SEP 23</div>
+          <div class="update-text"><span class="update-tag update-tag-pta">🤝 PTA</span><br>🎃 Fall Fest Volunteers Needed!<br>Our Fall Fest is October 16, and we're looking for parents and families to help make it extra special:<br>🚗 Trunk-or-Treat car participants<br>🍔 Food truck or local vendor connections<br>🎪 Carnival games &amp; inflatable fun<br>💡 Creative ideas for activities and entertainment<br>Trunk-or-Treat sign-up: <a href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-65999228-trunk" target="_blank" rel="noopener">https://www.signupgenius.com/go/30E0E4FADAD22ABF49-65999228-trunk</a><br>Want to help another way? Email bcenewsblast@gmail.com. We'll gather volunteers and set up a meeting with Mrs. Hicks and Jackie.</div>
+        </div>
+        <div class="update-item">
           <div class="update-date">SEP 26</div>
           <div class="update-text"><span class="update-tag update-tag-school">🏫 School</span><br>📚 Online Book Fair is Live!<br>Shop books, graphic novels, and games to support our school:<br>Online Store: Literati BCE Store<br>In-Person: Fall Fest (Oct 16, 5–7 PM) &amp; Oct 19–23</div>
         </div>
@@ -961,10 +970,6 @@
           <div class="event-item">
             <div class="event-month">OCT</div>
             <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> SAC Meeting</strong><span>October 8 · 5:30 PM</span></div>
-          </div>
-          <div class="event-item event-item-alert">
-            <div class="event-month">OCT</div>
-            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg> No School (Columbus Day)</strong><span>October 12</span></div>
           </div>
           <div class="event-item event-item-alert">
             <div class="event-month">OCT</div>
@@ -1403,7 +1408,11 @@
             else if(tagKey === 'class'){ tagHTML = '<span class="update-tag update-tag-class">🎒 Class</span><br>'; }
             else { tagHTML = '<span class="update-tag">From ' + esc(u.tag) + '</span><br>'; }
           }
-          return '<div class="update-item"><div class="update-date">' + esc(u.date) + '</div><div class="update-text">' + tagHTML + esc(u.text) + '</div></div>';
+          // Make plain URLs clickable and keep line breaks typed into the sheet cell.
+          var textHTML = esc(u.text)
+            .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
+            .replace(/\r?\n/g, '<br>');
+          return '<div class="update-item"><div class="update-date">' + esc(u.date) + '</div><div class="update-text">' + tagHTML + textHTML + '</div></div>';
         }).join('');
         if(uEmpty) uEmpty.style.display = uList.children.length ? 'none' : '';
       }
