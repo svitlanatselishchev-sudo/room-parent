@@ -710,18 +710,18 @@
         </div>
       </div>
       <div class="card wishlist-card card-giftcrowd">
-        <span class="badge-live" id="collectionsLiveBadge" style="display:none;">Live</span>
+        <span class="badge-live" id="collectionsLiveBadge">Live</span>
         <div class="wishlist-icon wishlist-icon-giftcrowd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3>Classroom Collections</h3>
         <p>For specific needs like teacher birthdays, events, or supplies, I'll open a GiftCrowd collection — funds go straight to who they're for, never through my own account.</p>
-        <div id="collectionsLive" style="display:none;">
+        <div id="collectionsLive">
           <a class="btn giftcrowd-btn" data-link="GiftCrowdURL" href="https://app.giftcrowd.com/app/join-occasion/v6mmcWq7EmJuPWh7" target="_blank" rel="noopener">See the Current Collection</a>
           <div class="hand-note-block note-coral">
             <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14,32 C6,24 4,10 15,3"/><path d="M15,3 L9,9"/><path d="M15,3 L19,10"/></svg>
             <span>goes straight to them!</span>
           </div>
         </div>
-        <p id="collectionsComingSoon" style="margin-top:4px;font-size:13.5px;color:var(--muted);font-style:italic;">Nothing open right now — check back soon!</p>
+        <p id="collectionsComingSoon" style="margin-top:4px;font-size:13.5px;color:var(--muted);font-style:italic;display:none;">Nothing open right now — check back soon!</p>
       </div>
       <div class="card wishlist-card card-adopt">
         <span class="badge-live">Live</span>
@@ -829,8 +829,8 @@
     <div class="card">
       <div class="update-list" id="updateList">
         <div class="update-item">
-          <div class="update-date">AUG 25</div>
-          <div class="update-text">Welcome to our class hub! 🎉 This is where I'll post updates all year — bookmark the page, join the group chat above if you haven't yet, and take a peek at the classroom wishlist when you get a chance. So excited for a great year with all of you!</div>
+          <div class="update-date">SEP 2</div>
+          <div class="update-text"><span class="update-tag update-tag-school">🏫 School</span><br>Carline Reminders (Ms. Atkinson): • 7:00–7:05: Front carline = Safety Patrols only • 7:05: Both carlines open • 7:35: Back carline closes • 7:40+: Tardy — park &amp; sign in at front office</div>
         </div>
         <!-- ============================================
              HOW TO POST A NEW UPDATE:
@@ -876,31 +876,6 @@
     </div>
   </div>
 </section>
-
-<!-- ============================================
-     UPCOMING EVENT SPOTLIGHT
-     Swap this out for whatever the next big event is —
-     update the badge text (if needed), title, description,
-     ticket note, and the button/footer links below.
-     Leave it out entirely (delete this whole div) if there's
-     nothing worth spotlighting right now.
-============================================ -->
-<div class="wrap" style="padding-top:6px;padding-bottom:4px;">
-  <div class="event-featured" id="upcomingEvent">
-    <div class="event-featured-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/><path d="M12 14l1.5 3 3.3.4-2.4 2.3.6 3.3-2.9-1.6"/></svg></div>
-    <div>
-      <span class="event-featured-badge">🎉 Upcoming Event</span>
-      <h3>PTA Spaghetti Dinner &amp; Bingo Night</h3>
-      <p>Wed, September 16 · 5:00–7:00 PM · Bessey Creek Elementary Cafeteria — spaghetti dinner (Anna's &amp; Texas Roadhouse), free family BINGO, kids' crafts, and a Silent Auction!</p>
-      <p class="event-featured-note">🎟️ Dinner tickets required in advance — none sold at the door.</p>
-    </div>
-    <div class="event-featured-actions">
-      <a class="btn btn-primary" href="https://app.givebacks.gives/spaghetti" target="_blank" rel="noopener">Get Tickets →</a>
-      <a class="btn btn-outline-white" href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-65469488-spaghetti#/" target="_blank" rel="noopener">Volunteer for the Event →</a>
-    </div>
-    <div class="event-featured-footer">Want to help another way? <a href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-65193036-cafeteria#/" target="_blank" rel="noopener">Volunteer in the cafeteria this month too →</a></div>
-  </div>
-</div>
 
 <div class="wrap" style="padding-top:4px;padding-bottom:4px;">
   <div class="suggestion-banner" id="suggestions">
@@ -964,12 +939,40 @@
         <h3><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l1.7 5.8L20 9.5l-6.3 1.7L12 17l-1.7-5.8L4 9.5l6.3-1.7L12 2z"/><path d="M19 14l.7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7L19 14z"/><path d="M5 15l.5 1.5L7 17l-1.5.5L5 19l-.5-1.5L3 17l1.5-.5L5 15z"/></svg> School & PTA Events</h3>
         <div class="event-list" id="eventList">
           <div class="event-item">
-            <div class="event-month">AUG</div>
-            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Volunteer & Room Rep Meeting</strong><span>August 31 · 8:30 AM</span></div>
+            <div class="event-month">SEP</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> Parent Workshop (every Tuesday)</strong><span>7:45 – 8:45 AM</span></div>
           </div>
           <div class="event-item">
             <div class="event-month">SEP</div>
-            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v6a3 3 0 0 0 3 3v11"/><path d="M6 2v6M9 2v6"/><path d="M18 2c-2 3-2 6 0 8v11"/></svg> PTA Spaghetti Dinner &amp; Bingo Night</strong><span>September 16 · 5:00–7:00 PM (dinner 5:00–6:30 PM)</span></div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> Bank Day (every Wednesday)</strong><span>7:15 – 7:40 AM</span></div>
+          </div>
+          <div class="event-item">
+            <div class="event-month">OCT</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> SAC Meeting</strong><span>October 8 · 5:30 PM</span></div>
+          </div>
+          <div class="event-item event-item-alert">
+            <div class="event-month">OCT</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg> No School (Columbus Day)</strong><span>October 12</span></div>
+          </div>
+          <div class="event-item event-item-alert">
+            <div class="event-month">OCT</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg> Early Release</strong><span>October 14</span></div>
+          </div>
+          <div class="event-item">
+            <div class="event-month">OCT</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> Fall Festival</strong><span>October 16 · 5:00 PM</span></div>
+          </div>
+          <div class="event-item">
+            <div class="event-month">OCT</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> Chick-fil-A Giveback Night</strong><span>October 22 · 2:00 PM</span></div>
+          </div>
+          <div class="event-item">
+            <div class="event-month">OCT</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> Conference Night</strong><span>October 29 · 5:00 PM</span></div>
+          </div>
+          <div class="event-item">
+            <div class="event-month">OCT</div>
+            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> Halloween</strong><span>October 31</span></div>
           </div>
           <!-- ============================================
                HOW TO ADD A NEW EVENT:
@@ -1084,13 +1087,13 @@
         </div>
       </div>
 
-      <div class="celebrate-featured-wrap" id="birthdayFeature" style="margin-top:36px;display:none;">
+      <div class="celebrate-featured-wrap" id="birthdayFeature" style="margin-top:36px;">
         <div class="celebrate-card celebrate-card-goal celebrate-featured">
           <div class="celebrate-icon celebrate-icon-gold">🎂</div>
           <div class="celebrate-body">
             <span class="celebrate-featured-badge">🎉 Coming Up</span>
             <h4>Ms. Fernandes' Birthday</h4>
-            <p><span data-link="BirthdayText">October 28 — chip in any amount and sign her digital card, all in one place below. She'll receive one combined gift card from all of us. Collection closes 10/28 at 7:00 AM so it's ready in time.</span></p>
+            <p><span data-link="BirthdayText">October 28 — chip in any amount and sign her digital card, all in one place below. She'll receive one combined gift card from all of us. Collection closes 10/28 at 7:00 AM.</span></p>
             <div class="celebrate-goal">
               <span class="celebrate-goal-label">Suggested class goal: <strong>$<span data-link="BirthdayGoal">100</span></strong> <em>(any amount welcome!)</em></span>
               <a class="btn btn-celebrate" data-link="GiftCrowdURL" href="https://app.giftcrowd.com/app/join-occasion/v6mmcWq7EmJuPWh7" target="_blank" rel="noopener">Give a Gift →</a>
@@ -1531,25 +1534,23 @@
   })();
 
   (function(){
-    // Ms. Fernandes' Birthday collection — hidden by default in the HTML
-    // (both the "Coming Up" card in Teacher Appreciation, and the live
-    // GiftCrowd button + badge on the Classroom Collections wishlist card),
-    // revealed starting October 1st based on the visitor's local date.
-    // To change the reveal date, edit the "month >= 10" check below (10 = October).
-    var month = new Date().getMonth() + 1; // 1-12
-    var isLive = month >= 10;
+    // Ms. Fernandes' Birthday collection — currently shown by default
+    // (the "Coming Up" card in Teacher Appreciation, and the live
+    // GiftCrowd button + badge on the Classroom Collections wishlist card).
+    // To hide it again (e.g. after the collection closes), set isLive to
+    // false below, or restore date-based gating with:
+    //   var isLive = (new Date().getMonth() + 1) >= 10; // 10 = October
+    var isLive = true;
 
     var feature = document.getElementById('birthdayFeature');
-    if(feature && isLive){ feature.style.display = ''; }
+    if(feature){ feature.style.display = isLive ? '' : 'none'; }
 
     var liveBadge = document.getElementById('collectionsLiveBadge');
     var liveBlock = document.getElementById('collectionsLive');
     var comingSoon = document.getElementById('collectionsComingSoon');
-    if(isLive){
-      if(liveBadge){ liveBadge.style.display = ''; }
-      if(liveBlock){ liveBlock.style.display = ''; }
-      if(comingSoon){ comingSoon.style.display = 'none'; }
-    }
+    if(liveBadge){ liveBadge.style.display = isLive ? '' : 'none'; }
+    if(liveBlock){ liveBlock.style.display = isLive ? '' : 'none'; }
+    if(comingSoon){ comingSoon.style.display = isLive ? 'none' : ''; }
   })();
 </script>
 
