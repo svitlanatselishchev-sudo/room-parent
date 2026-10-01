@@ -474,6 +474,11 @@
   .event-item-alert{background:var(--coral-light);border:1.5px solid var(--coral);}
   .event-item-alert .event-month{background:var(--coral-dark);}
   .event-item-alert .event-info strong{color:var(--coral-dark);}
+  .event-item-featured{background:linear-gradient(135deg,#fff3e0 0%,#ffdca8 100%);border:2px solid var(--gold);box-shadow:0 6px 18px rgba(227,140,37,.28);position:relative;overflow:hidden;}
+  .event-item-featured .event-month{background:linear-gradient(135deg,#e38c25,#a85d1a);font-size:19px;}
+  .event-item-featured .event-info strong{color:var(--gold-dark);font-size:15.5px;}
+  .event-item-featured .event-info span{font-weight:700;color:var(--coral-dark);}
+  .event-item-featured-tag{position:absolute;top:0;right:0;background:var(--coral-dark);color:#fff;font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:0 0 0 10px;}
   .event-month-heading{font-weight:800;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-bottom:5px;border-bottom:2px solid var(--line);margin-top:6px;}
   .event-month-heading:first-child{margin-top:0;}
   .event-month-heading-current{display:flex;align-items:center;gap:6px;color:var(--gold-dark);background:linear-gradient(90deg,#fff9ef 0%,#fdecd6 100%);border:1.5px solid var(--gold);border-radius:10px;padding:7px 12px;font-size:12.5px;margin-top:0;}
@@ -620,7 +625,7 @@
       <nav class="links">
         <a href="#wishlist">Wishlist</a>
         <a href="#about">About</a>
-        <a href="#connect">Connect</a>
+        <a href="#connect">🎃 Fall Fest</a>
         <a href="#updates">Updates</a>
         <a href="#suggestions">Ideas</a>
         <a href="#dates">Dates</a>
@@ -628,6 +633,7 @@
         <a href="#goodtoknow">Good to Know</a>
         <a href="#involved">Involved</a>
         <a href="#contact">Contact</a>
+        <a href="#classchat">Class Chat</a>
       </nav>
       <a class="nav-cta" data-link="RemindURL" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg><span>Join Chat</span></a>
       <button class="menu-btn" aria-label="Toggle menu" onclick="document.querySelector('nav.links').classList.toggle('open')"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
@@ -783,33 +789,72 @@
 
 <section class="section" id="connect">
   <div class="section-deco">
-    <span class="d-circle" style="width:120px;height:120px;right:-35px;top:0;background:rgba(234,183,216,.13);"></span>
-    <span class="d-circle" style="width:34px;height:34px;left:8%;bottom:12%;background:rgba(196,113,165,.15);"></span>
+    <span class="d-circle" style="width:120px;height:120px;right:-35px;top:0;background:rgba(227,140,37,.14);"></span>
+    <span class="d-circle" style="width:34px;height:34px;left:8%;bottom:12%;background:rgba(115,71,108,.12);"></span>
     <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:40px;height:40px;left:14%;top:10%;color:rgba(111,154,134,.16);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
     <svg class="d-seasonal" viewBox="0 0 100 100" fill="currentColor" style="width:42px;height:42px;right:6%;bottom:8%;transform:rotate(-10deg);"><use class="d-seasonal-use"></use></svg>
   </div>
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow eyebrow-lavender">Stay Connected</span>
-      <h2>Stay Connected</h2>
-      <p class="subhead">Real-time updates and a place to chat with other class families</p>
+      <span class="eyebrow eyebrow-gold">🎃 October Spotlight</span>
+      <h2>Once Upon a Not So Spooky Night</h2>
+      <p class="subhead">Fall Fest is almost here — here's how our class can help make it magical</p>
     </div>
-    <div class="connect-featured">
-      <div class="connect-featured-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg></div>
-      <div>
-        <span class="connect-featured-badge"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:12px;height:12px;"><path d="M12 2l2.9 6.3 6.9.9-5 4.7 1.3 6.8L12 17.6l-6.1 3.1 1.3-6.8-5-4.7 6.9-.9L12 2z"/></svg> Most Important</span>
-        <h3>Join Our Class Group Chat</h3>
-        <p>This is where our whole class connects — not just with me, but with each other! Birthdays, playdates, quick questions, reminders, and photos, all in one thread on Remind. Please join so you don't miss anything!</p>
-        <p style="font-size:12.5px;margin-top:6px;">No app needed — join by text or email with one tap below, or get the free Remind app for the full experience.</p>
+
+    <div class="card card-accent-gold" style="text-align:left;box-sizing:border-box;background:linear-gradient(135deg,#fff9ef 0%,#fdecd6 100%);border:2px solid var(--gold);box-shadow:0 14px 34px rgba(227,140,37,.24);">
+      <span style="display:inline-block;background:var(--gold);color:var(--green-dark);font-weight:800;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 11px;border-radius:999px;margin-bottom:9px;">🎃 Fall Fest Special</span>
+      <h3 style="font-size:18px;color:var(--green-dark);margin-bottom:8px;">🧡 Fall Fest &middot; Friday, October 16 at 5:00 PM</h3>
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:0;">Bessey Creek's biggest night of the year is almost here! Join us for <strong style="color:var(--green-dark);">"Once Upon a Not So Spooky Night"</strong> — presented by the BCE PTA in partnership with Napoli Orthodontics — with Trunk or Treat, carnival games &amp; inflatables, food trucks, and Book Fair shopping for the whole family. 👻 We're growing our volunteer coven for the night — we have <strong style="color:var(--green-dark);">one parent already helping</strong>, but truly, the more the merrier! No broomstick required, just your Gator spirit. Pick a role below. 🧙‍♀️</p>
+    </div>
+
+    <div class="card" style="text-align:left;margin-top:16px;box-sizing:border-box;background:linear-gradient(135deg,#1b2043 0%,#2c1f45 100%);border:2px solid var(--gold);box-shadow:0 14px 34px rgba(0,0,0,.28);color:#ffffff;">
+      <span style="display:inline-block;background:var(--gold);color:#2c1f45;font-weight:800;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 11px;border-radius:999px;margin-bottom:9px;">🍬 Candy Drive</span>
+      <h3 style="font-size:18px;color:#ffffff;margin-bottom:6px;">👻 Candy Donations Needed! — House Competition</h3>
+      <p style="font-size:13.5px;color:#d9d3ea;margin-bottom:12px;">Help make our Trunk or Treat extra sweet! Donate <strong style="color:#ffffff;">unopened bags of individually wrapped candy</strong> — every bag earns points for your house. 🎃</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+        <div style="text-align:center;background:rgba(255,255,255,.08);border-radius:10px;padding:8px 14px;min-width:50px;"><div style="font-size:18px;font-weight:800;color:var(--gold);">5</div><div style="font-size:10px;color:#cfc7e0;">1st</div></div>
+        <div style="text-align:center;background:rgba(255,255,255,.08);border-radius:10px;padding:8px 14px;min-width:50px;"><div style="font-size:18px;font-weight:800;color:var(--gold);">4</div><div style="font-size:10px;color:#cfc7e0;">2nd</div></div>
+        <div style="text-align:center;background:rgba(255,255,255,.08);border-radius:10px;padding:8px 14px;min-width:50px;"><div style="font-size:18px;font-weight:800;color:var(--gold);">3</div><div style="font-size:10px;color:#cfc7e0;">3rd</div></div>
+        <div style="text-align:center;background:rgba(255,255,255,.08);border-radius:10px;padding:8px 14px;min-width:50px;"><div style="font-size:18px;font-weight:800;color:var(--gold);">2</div><div style="font-size:10px;color:#cfc7e0;">4th</div></div>
+        <div style="text-align:center;background:rgba(255,255,255,.08);border-radius:10px;padding:8px 14px;min-width:50px;"><div style="font-size:18px;font-weight:800;color:var(--gold);">1</div><div style="font-size:10px;color:#cfc7e0;">5th</div></div>
       </div>
-      <div>
-        <a class="btn btn-primary" data-link="RemindURL" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener">Join the Group Chat</a>
-        <div class="hand-note-block note-cream">
-          <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14,32 C6,24 4,10 15,3"/><path d="M15,3 L9,9"/><path d="M15,3 L19,10"/></svg>
-          <span>seriously, join us!</span>
-        </div>
+      <p style="font-size:12.5px;color:#cfc7e0;margin:0;">🏆 The house with the most candy earns 5 points! Label each bag with your <strong style="color:#ffffff;">house color</strong> or <strong style="color:#ffffff;">student name</strong> so your house gets credit.</p>
+    </div>
+
+    <div class="duty-grid duty-grid-2" style="margin-top:18px;align-items:stretch;">
+      <div style="background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;">
+        <h4 style="font-size:14.5px;color:var(--green-dark);margin:0 0 2px;">🍽️ October Cafeteria Volunteers</h4>
+        <div style="font-size:11px;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;">All Month Long</div>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 12px;flex:1;">Lend a hand in the cafeteria during the school day.</p>
+        <a class="btn btn-primary btn-sm" href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-66244762-cafeteria#/" target="_blank" rel="noopener" style="align-self:flex-start;">Sign Up →</a>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#fff3e0 0%,#ffdca8 100%);border:2px solid var(--gold);border-radius:12px;padding:16px;display:flex;flex-direction:column;position:relative;overflow:hidden;box-shadow:0 6px 16px rgba(227,140,37,.22);">
+        <span style="position:absolute;top:0;right:0;background:var(--coral-dark);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:0 0 0 10px;">We need you!</span>
+        <h4 style="font-size:14.5px;color:var(--gold-dark);margin:0 0 2px;">🎃 Fall Festival Volunteers</h4>
+        <div style="font-size:11px;font-weight:700;color:var(--coral-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;">October 16 &middot; Once Upon a Not So Spooky Night</div>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 12px;flex:1;">Help bring the spookiest, most spirited night of the year to life — games, activities, setup, cleanup, and more. Every shift helps us create pure Halloween magic for our kids! 🧡</p>
+        <a class="btn btn-primary btn-sm" href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-66192190-fall#/" target="_blank" rel="noopener" style="align-self:flex-start;">Join the Coven →</a>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;">
+        <h4 style="font-size:14.5px;color:var(--green-dark);margin:0 0 2px;">🚗 Trunk or Treat Car Decorating</h4>
+        <div style="font-size:11px;font-weight:700;color:var(--sky-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;">October 16</div>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px;">👽 Decorate your vehicle and join the fun! PTA will provide the candy, so you can focus on creating a fun trunk for the kids.</p>
+        <div style="border:2px dashed var(--sky-dark);border-radius:10px;padding:8px 12px;margin:0 0 12px;font-size:12px;font-weight:600;color:var(--green-dark);background:var(--sky-light);flex:1;">🛸 From Lana: Our family is doing an <strong>aliens trunk with a UFO abducting a cow</strong>!! Come join in — it's SO much fun. 🐄✨</div>
+        <a class="btn btn-green btn-sm" href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-65999228-trunk#/" target="_blank" rel="noopener" style="align-self:flex-start;">Sign Up →</a>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;">
+        <h4 style="font-size:14.5px;color:var(--green-dark);margin:0 0 2px;">📚 Book Fair Volunteers</h4>
+        <div style="font-size:11px;font-weight:700;color:var(--coral-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;">October 19&ndash;23</div>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px;">Help students find books, shop, and stay within their budgets while keeping the fair running smoothly.</p>
+        <div style="border:2px dashed var(--coral-dark);border-radius:10px;padding:8px 12px;margin:0 0 12px;font-size:12px;font-weight:700;color:var(--green-dark);background:var(--coral-light);">📅 Ms. Fernandes' class shops: Monday, October 19th &middot; 11:00&ndash;11:45 AM (Day F with Spanish)</div>
+        <a class="btn btn-primary btn-sm" href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-66220257-book#/" target="_blank" rel="noopener" style="align-self:flex-start;">Sign Up →</a>
       </div>
     </div>
+
+    <p style="font-size:12.5px;color:var(--muted);margin:18px 0 0;">📌 These volunteer opportunities require Level 2 clearance. Whether you join the coven for a shift, decorate a trunk, or help fill the cauldron with candy — thank you for helping conjure up a little Fall Fest magic! 🎃</p>
   </div>
 </section>
 
@@ -954,9 +999,10 @@
             <div class="event-month">OCT</div>
             <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg> Early Release</strong><span>October 14</span></div>
           </div>
-          <div class="event-item">
-            <div class="event-month">OCT</div>
-            <div class="event-info"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> Fall Festival</strong><span>October 16 · 5:00 PM</span></div>
+          <div class="event-item event-item-featured">
+            <div class="event-item-featured-tag">🎃 Don't Miss It!</div>
+            <div class="event-month">🎃</div>
+            <div class="event-info"><strong>Fall Festival — Once Upon a Not So Spooky Night</strong><span>October 16 · 5:00 PM</span></div>
           </div>
           <div class="event-item">
             <div class="event-month">OCT</div>
@@ -1184,44 +1230,7 @@
       <a class="btn btn-green btn-sm" href="https://www.martinschools.org/page/volunteer-services" target="_blank" rel="noopener">Start Volunteer Application</a>
     </div>
 
-    <!-- October Volunteer Opportunities -->
-    <div class="card" style="text-align:left;margin:28px 0 0;box-sizing:border-box;">
-      <h3 style="font-size:17px;color:var(--green-dark);margin-bottom:8px;">🎉 October Opportunities</h3>
-      <p style="font-size:13.5px;color:var(--muted);margin-bottom:0;">We have several ways to get involved at Bessey Creek this October! We already have <strong style="color:var(--green-dark);">one parent</strong> helping out with Fall Fest on <strong style="color:var(--green-dark);">October 16</strong> — but please join in if you can! The more the merrier, whether it's games, activities, setup, or cleanup. Let's work together to create a wonderful holiday for our kids. 🎃 We're also collecting <strong style="color:var(--green-dark);">candy donations</strong> for Trunk or Treat: PTA provides candy for participating trunks, and family donations help keep them stocked all evening for our trunk-or-treaters.</p>
-
-      <div class="duty-grid duty-grid-2" style="margin-top:18px;align-items:stretch;">
-        <div style="background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;">
-          <h4 style="font-size:14.5px;color:var(--green-dark);margin:0 0 2px;">🍽️ October Cafeteria Volunteers</h4>
-          <div style="font-size:11px;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;">All Month Long</div>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 12px;flex:1;">Lend a hand in the cafeteria during the school day.</p>
-          <a class="btn btn-primary btn-sm" href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-66244762-cafeteria#/" target="_blank" rel="noopener" style="align-self:flex-start;">Sign Up →</a>
-        </div>
-
-        <div style="background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;">
-          <h4 style="font-size:14.5px;color:var(--green-dark);margin:0 0 2px;">🎃 Fall Festival Volunteers</h4>
-          <div style="font-size:11px;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;">October 16</div>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 12px;flex:1;">Help bring "Once Upon a Not So Spooky Night" to life with activities, games, setup, cleanup, and other areas throughout the evening.</p>
-          <a class="btn btn-primary btn-sm" href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-66192190-fall#/" target="_blank" rel="noopener" style="align-self:flex-start;">Sign Up →</a>
-        </div>
-
-        <div style="background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;">
-          <h4 style="font-size:14.5px;color:var(--green-dark);margin:0 0 2px;">🚗 Trunk or Treat Car Decorating</h4>
-          <div style="font-size:11px;font-weight:700;color:var(--sky-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;">October 16</div>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 12px;flex:1;">Decorate your vehicle and join the fun! PTA will provide the candy, so you can focus on creating a fun trunk for the kids.</p>
-          <a class="btn btn-green btn-sm" href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-65999228-trunk#/" target="_blank" rel="noopener" style="align-self:flex-start;">Sign Up →</a>
-        </div>
-
-        <div style="background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;">
-          <h4 style="font-size:14.5px;color:var(--green-dark);margin:0 0 2px;">📚 Book Fair Volunteers</h4>
-          <div style="font-size:11px;font-weight:700;color:var(--coral-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;">October 19&ndash;23</div>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.5;margin:0 0 10px;">Help students find books, shop, and stay within their budgets while keeping the fair running smoothly.</p>
-          <div style="border:2px dashed var(--coral-dark);border-radius:10px;padding:8px 12px;margin:0 0 12px;font-size:12px;font-weight:700;color:var(--green-dark);background:var(--coral-light);">📅 Ms. Fernandes' class shops: Monday, October 19th &middot; 11:00&ndash;11:45 AM (Day F with Spanish)</div>
-          <a class="btn btn-primary btn-sm" href="https://www.signupgenius.com/go/30E0E4FADAD22ABF49-66220257-book#/" target="_blank" rel="noopener" style="align-self:flex-start;">Sign Up →</a>
-        </div>
-      </div>
-
-      <p style="font-size:12.5px;color:var(--muted);margin:18px 0 0;">📌 These volunteer opportunities require Level 2 clearance. Whether you volunteer for a shift, decorate a trunk, or donate candy — thank you for helping make these experiences possible for our students!</p>
-    </div>
+    <div class="note-box" style="margin-top:22px;">🎃 Looking for the October Fall Fest volunteer roles and candy drive details? <a href="#connect">See the full spotlight up top!</a></div>
 
     <!-- Ghost PTA -->
     <div class="ghost-card">
@@ -1279,6 +1288,38 @@
         <p>2201 SW Matheson Ave, Palm City, FL 34990</p>
         <p><a href="tel:7722191500">(772) 219-1500</a></p>
         <p><a href="https://www.martinschools.org/o/bces" target="_blank" rel="noopener">Visit School Website</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="classchat">
+  <div class="section-deco">
+    <span class="d-circle" style="width:120px;height:120px;right:-35px;top:0;background:rgba(234,183,216,.13);"></span>
+    <span class="d-circle" style="width:34px;height:34px;left:8%;bottom:12%;background:rgba(196,113,165,.15);"></span>
+    <svg class="d-flower" viewBox="0 0 100 100" fill="currentColor" style="width:40px;height:40px;left:14%;top:10%;color:rgba(111,154,134,.16);"><g><ellipse cx="50" cy="24" rx="16" ry="24"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="16" ry="24" transform="rotate(288 50 50)"/></g></svg>
+    <svg class="d-seasonal" viewBox="0 0 100 100" fill="currentColor" style="width:42px;height:42px;right:6%;bottom:8%;transform:rotate(-10deg);"><use class="d-seasonal-use"></use></svg>
+  </div>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-lavender">Stay Connected</span>
+      <h2>Stay Connected</h2>
+      <p class="subhead">Real-time updates and a place to chat with other class families</p>
+    </div>
+    <div class="connect-featured">
+      <div class="connect-featured-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.35A8.5 8.5 0 0 1 4.6 18L3 21l1.9-5.7A8.38 8.38 0 0 1 3.15 11 8.5 8.5 0 0 1 12 2.65h.5a8.48 8.48 0 0 1 8 8v.85z"/></svg></div>
+      <div>
+        <span class="connect-featured-badge"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:12px;height:12px;"><path d="M12 2l2.9 6.3 6.9.9-5 4.7 1.3 6.8L12 17.6l-6.1 3.1 1.3-6.8-5-4.7 6.9-.9L12 2z"/></svg> Most Important</span>
+        <h3>Join Our Class Group Chat</h3>
+        <p>This is where our whole class connects — not just with me, but with each other! Birthdays, playdates, quick questions, reminders, and photos, all in one thread on Remind. Please join so you don't miss anything!</p>
+        <p style="font-size:12.5px;margin-top:6px;">No app needed — join by text or email with one tap below, or get the free Remind app for the full experience.</p>
+      </div>
+      <div>
+        <a class="btn btn-primary" data-link="RemindURL" href="https://www.remind.com/join/37a6fe" target="_blank" rel="noopener">Join the Group Chat</a>
+        <div class="hand-note-block note-cream">
+          <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14,32 C6,24 4,10 15,3"/><path d="M15,3 L9,9"/><path d="M15,3 L19,10"/></svg>
+          <span>seriously, join us!</span>
+        </div>
       </div>
     </div>
   </div>
