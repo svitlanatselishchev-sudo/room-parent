@@ -1597,7 +1597,7 @@
     // To hide it again (e.g. after the collection closes), set isLive to
     // false below, or restore date-based gating with:
     //   var isLive = (new Date().getMonth() + 1) >= 10; // 10 = October
-    var isLive = true;
+    var isLive = false;
 
     var feature = document.getElementById('birthdayFeature');
     if(feature){ feature.style.display = isLive ? '' : 'none'; }
